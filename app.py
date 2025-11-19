@@ -8,23 +8,28 @@ app = Flask(__name__)
 
 def parse_command(input: str):
     input = input.strip()
-    args = input.split(" ")
+    words = input.split(" ")
+    if (len(words) > 1):
+        args = words[1:]
+        prob = ProblemFactory.createProblem(words[0], args)
+    else:
+        prob = ProblemFactory.createProblem(input)
+
     # matrix 3x3 linear system
     # 2x2 diff eq 1st order linear system
     # priority queue
     # binary search drawing
-    prob = ProblemFactory.createProblem(input)
-
-    return prob.problem_str
+    raw_str = prob.problem_str.rstrip()
+    lines = raw_str.split("\n")
+    return lines
 
 
 @app.route("/", methods=["GET", "POST"])
 def index():
-    command_output = ""
     if (request.method == "POST"):
         user_input = request.form["command_line"]
-        command_output = parse_command(user_input)
-    return render_template("index.html", command_output=command_output)
+        output_lines = parse_command(user_input)
+    return render_template("index.html", lines=output_lines)
 
 def main():
     app.run()

@@ -9,13 +9,17 @@
         <header>
             <a href="/">Home</a>
         </header>
-        <h1> Problem Generator </h1>
+        <h1> DChu's Problem Generator </h1>
         <form name="form" method="post">
-            <input type="text" name="command_line" />
+            <input type="text" name="command_line" placeholder="Enter a command..." required="true" autofocus="true" autocomplete="off" />
             <button type="submit">Submit</button>
         </form>
+        <div>
+            {% for line in lines %}
+                <p> {{ line }} </p>
+            {% endfor %}
+        </div>
         <p>
-            {{ command_output }}
         </p>
     </body>
 </html>
