@@ -7,7 +7,7 @@ class ProblemFactory(object):
         pass
 
     def createProblem(problem_type: str, args: list = None) -> Problem:
-        if (problem_type == "bstdraw" or problem_type == "bstproblem"):
+        if (problem_type in ["bst", "bstdraw", "bstproblem"]):
             return BSTProblem()
         
         elif (problem_type == "matsys"):

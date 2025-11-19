@@ -4,4 +4,4 @@ class Problem(object):
         self.problem_str = self._get_problem_str()
     
     def _get_problem_str(self):
-        return "sample problem string"
+        return "Problem not found!"
