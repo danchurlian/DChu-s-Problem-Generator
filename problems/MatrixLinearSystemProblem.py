@@ -17,17 +17,20 @@ class MatrixLinearSystemProblem(Problem):
     def _generate_solution(self):
         sols = []
         for i in range(self.dimension):
-            ran = math.floor(random.random() * 7 - 3)
-            sols.append(ran) 
+            while (True):
+                ran = math.floor(random.random() * 9 - 4)
+                if not ran in sols:
+                    sols.append(ran) 
+                    break
         return sols
     
     def _new_equation(self) -> str:
         sum = 0
         result = ""
         for component in self.sols:
-            coef = math.floor(random.random() * 9 - 4)
+            coef = math.floor(random.random() * 13 - 6)
             term = coef * component
             sum += term
-            result += f"{term:3d} "
+            result += f"{coef:3d} "
         result += f"| {sum:3d}\n"
         return result
