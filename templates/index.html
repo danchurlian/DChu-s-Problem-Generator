@@ -1,13 +1,21 @@
 <!DOCTYPE html> 
-<html>
+<html lang="en">
     <head>
+        <meta charset="utf-8">
+        <meta name="application-name" content="DChu's Problem Generator">
+        <meta name="author" content="DChu">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>
             DChu's Problem Generator
         </title>
+        <link href=" {{ url_for('static', filename='index.css') }}" rel="stylesheet "/>
+
     </head>
     <body>
         <header>
-            <a href="/">Home</a>
+            <nav>
+                <a href="/">Home</a>
+            </nav>
         </header>
         <h1> DChu's Problem Generator </h1>
         <form name="form" method="post">
@@ -24,7 +32,5 @@
                 <pre> {{ line }} </pre>
             {% endfor %}
         </div>
-        <p>
-        </p>
     </body>
 </html>
