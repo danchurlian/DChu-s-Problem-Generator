@@ -19,18 +19,18 @@
         </header>
         <h1> DChu's Problem Generator </h1>
         <form name="form" method="post">
-            <input type="text" name="command_line" placeholder="Enter a command..." required="true" autofocus="true" autocomplete="off" />
-            <button type="submit">Submit</button>
+            <input type="text" name="command_line" class="courier-text"  placeholder="Enter a command..." required="true" autofocus="true" autocomplete="off" />
+            <button type="submit" class="courier-text">Submit</button>
         </form>
-        <section>
+        <section id="help-section" class="courier-text">
             {% for line in help_lines %}
                 <p> {{ line }} </p>
             {% endfor %}
         </section>
-        <div>
+        <section id="output-section" class="courier-text">
             {% for line in output_lines %}
                 <pre> {{ line }} </pre>
             {% endfor %}
-        </div>
+        </section>
     </body>
 </html>

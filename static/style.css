@@ -1,0 +1,13 @@
+.courier-text {
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 1em;
+}
+
+body {
+    background-color: aliceblue;   
+    font-family: 'Courier New', Courier, monospace;
+}
+
+body nav {
+    background-color: rgb(9, 17, 103)
+}
