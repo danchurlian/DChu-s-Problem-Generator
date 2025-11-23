@@ -9,7 +9,7 @@ class MatrixLinearSystemProblem(Problem):
         super().__init__()
     
     def _get_problem_str(self):
-        result = "Please solve the following linear system using Gaussian Elimination.\n"
+        result = "Please solve the following linear system.\n"
         for i in range(self.dimension):
             result += self._new_equation()
         return result

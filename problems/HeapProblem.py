@@ -32,9 +32,12 @@ class HeapProblem(Problem):
 
     # Displays the heap array and instructions.
     def _get_problem_str(self):
-        num_str = ""
+        result = "The min-heap has been initialized as follows:\n"
         for n in self.heaparr:
-            num_str += str(n) + " "
+            result += str(n) + " "
         ran_insert = int(random.random() * 4 + 1)
-        num_str += f"\nPlease insert {ran_insert}."
-        return num_str
+        result += f"""\nDo the following instructions:
+- Please get the smallest element and remove it from the heap. Write down the result.
+- Please insert {ran_insert}. Write down the result.
+"""
+        return result
