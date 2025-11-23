@@ -1,6 +1,7 @@
 from .Problem import Problem
 from .BSTProblem import BSTProblem
 from .MatrixLinearSystemProblem import MatrixLinearSystemProblem
+from .HeapProblem import HeapProblem
 
 class ProblemFactory(object):
     def __init__(self):
@@ -18,4 +19,6 @@ class ProblemFactory(object):
                 except ValueError:
                     pass
             return MatrixLinearSystemProblem()
+        elif (problem_type in ["heap", "minheap"]):
+            return HeapProblem()
         return Problem()
