@@ -23,27 +23,17 @@ def parse_command(input: str):
     lines = raw_str.split("\n")
     return lines
 
-
-def get_help_lines() -> str:
-    return """
-        COMMANDS:\n
-        --------:\n
-        bstdraw OR bstproblem -> Draw a Binary Search Tree.\n
-        matsys [n] -> Solve an nth dimension linear system of equations using Gaussian elimination.\n
-    """.split("\n")
-
 # ---------------------------------------------------------------
 
 
 @app.route("/", methods=["GET", "POST"])
 def index():
-    help_lines = get_help_lines()
     if (request.method == "POST"):
         user_input = request.form["command_line"]
         output_lines = parse_command(user_input)
-        return render_template("index.html", output_lines=output_lines, help_lines=help_lines)
+        return render_template("index.html", output_lines=output_lines)
     
-    return render_template("index.html", help_lines=help_lines)
+    return render_template("index.html")
 
 def main():
     app.run()

@@ -18,14 +18,16 @@
             </nav>
         </header>
         <h1> DChu's Problem Generator </h1>
-        <form name="form" method="post">
+        <form name="form" method="post" id="command-form">
             <input type="text" name="command_line" class="courier-text"  placeholder="Enter a command..." required="true" autofocus="true" autocomplete="off" />
             <button type="submit" class="courier-text">Submit</button>
         </form>
         <section id="help-section" class="courier-text">
-            {% for line in help_lines %}
-                <p> {{ line }} </p>
-            {% endfor %}
+            <h2>Commands: </h2>
+            <ul>
+                <li>bstdraw OR bstproblem -> Draw a Binary Search Tree.</li>
+                <li>matsys [n] -> Solve an nth dimension linear system of equations using Gaussian elimination.</li>
+            </ul>
         </section>
         <section id="output-section" class="courier-text">
             {% for line in output_lines %}

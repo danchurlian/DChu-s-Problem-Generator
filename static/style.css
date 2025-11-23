@@ -6,8 +6,33 @@
 body {
     background-color: aliceblue;   
     font-family: 'Courier New', Courier, monospace;
+
+    margin: 0px;
 }
 
 body nav {
-    background-color: rgb(9, 17, 103)
+    background-color: rgb(9, 17, 103);
+    height: 2em;
+}
+
+body nav a {
+    color: white;
+}
+
+body h1, form, body section {
+    padding: 10px;
+}
+
+#command-form button {
+    background-color: rgb(9, 17, 103);
+    color: white;
+    border-width: 0px;
+}
+
+#command-form input {
+    width: 20em;
+}
+
+#command-form * {
+    height: 2em;
 }
