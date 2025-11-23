@@ -10,17 +10,42 @@ body {
     margin: 0px;
 }
 
+body > * {
+    margin-left: 10px;
+}
+
+header {
+    margin-left: 0px;
+}
+
 nav {
     background-color: rgb(9, 17, 103);
     height: 2em;
+    margin: 0px;
+}
+
+body > h2 {
+    /* margin-top: 0.5em; */
+    margin-bottom: 0.25em;
 }
 
 nav a {
     color: white;
 }
 
-body h1, form, body section {
-    padding: 10px;
+#help-section {
+    background-color: rgb(243, 242, 248);
+    width: 50%;
+
+    padding-top: 5px;
+    padding-bottom: 5px;
+    border-radius: 5px;
+
+    margin: 0.5em;
+}
+
+#help-section li {
+    font-weight: bold;
 }
 
 #command-form button {
@@ -35,4 +60,22 @@ body h1, form, body section {
 
 #command-form * {
     height: 2em;
+}
+
+#output-section {
+    background-color: rgb(30, 28, 40);
+    width: 50%;
+
+    padding-top: 10px;
+    padding-bottom: 10px;
+
+    border-radius: 5px;
+    margin: 0.5em;
+}
+
+#output-section pre {
+    margin-top: 5px;
+    margin-bottom: 5px;
+    color: white;
+    font-size: 1rem;
 }

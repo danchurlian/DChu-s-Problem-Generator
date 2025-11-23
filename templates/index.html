@@ -22,14 +22,15 @@
             <input type="text" name="command_line" class="courier-text"  placeholder="Enter a command..." required="true" autofocus="true" autocomplete="off" />
             <button type="submit" class="courier-text">Submit</button>
         </form>
+        <h2>Commands:</h2>
         <section id="help-section" class="courier-text">
-            <h2>Commands: </h2>
             <ul>
-                <li>"bst" OR "bstdraw" OR "bstproblem" -> Draw a Binary Search Tree.</li>
+                <li>"bst", "bstdraw", "bstproblem" -> Draw a Binary Search Tree.</li>
                 <li>"matsys [n]" -> Solve an nth dimension linear system of equations using Gaussian elimination.</li>
                 <li>"heap" -> Compute operations on a min-heap and draw out the result. </li>
             </ul>
         </section>
+        <h2>Output:</h2>
         <section id="output-section" class="courier-text">
             {% for line in output_lines %}
                 <pre> {{ line }} </pre>
