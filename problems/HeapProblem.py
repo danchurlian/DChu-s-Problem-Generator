@@ -1,9 +1,40 @@
 from .Problem import Problem
+import random
+import math
 
 class HeapProblem(Problem):
     def __init__(self):
+        self.heaparr = self._init_heaparr()
         super().__init__()
     
+    # Initializes the heap array
+    def _init_heaparr(self):
+        arr = []
+        for i in range(8):
+            ran = math.floor(random.random() * 9 + 1)
+            HeapProblem._add_to_heap(arr, ran)
+        return arr
+    
+    # Adds numbers to the array in a min-heap fashion
+    def _add_to_heap(arr, num: int):
+        arr.append(num)
+
+        curr_idx = len(arr) - 1
+        parent_idx = math.floor((curr_idx - 1) / 2)
+
+        while curr_idx != 0 and arr[curr_idx] < arr[parent_idx]:
+            temp = arr[curr_idx]
+            arr[curr_idx] = arr[parent_idx];
+            arr[parent_idx] = temp 
+            
+            curr_idx = parent_idx
+            parent_idx = math.floor((parent_idx - 1) / 2)
+
+    # Displays the heap array and instructions.
     def _get_problem_str(self):
-        num_str = "1 2 3 4 5 6 \n"
-        return num_str + "please insert 1."
+        num_str = ""
+        for n in self.heaparr:
+            num_str += str(n) + " "
+        ran_insert = int(random.random() * 4 + 1)
+        num_str += f"\nPlease insert {ran_insert}."
+        return num_str

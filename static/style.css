@@ -10,12 +10,12 @@ body {
     margin: 0px;
 }
 
-body nav {
+nav {
     background-color: rgb(9, 17, 103);
     height: 2em;
 }
 
-body nav a {
+nav a {
     color: white;
 }
 
