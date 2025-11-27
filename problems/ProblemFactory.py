@@ -1,6 +1,7 @@
 from .Problem import Problem
 from .BSTProblem import BSTProblem
 from .MatrixLinearSystemProblem import MatrixLinearSystemProblem
+from .LinearPlanarSystemProblem import LinearPlanarSystemProblem
 from .HeapProblem import HeapProblem
 
 class ProblemFactory(object):
@@ -10,6 +11,9 @@ class ProblemFactory(object):
     def createProblem(problem_type: str, args: list = None) -> Problem:
         if (problem_type in ["bst", "bstdraw", "bstproblem"]):
             return BSTProblem()
+
+        # elif (problem_type in ["diffsys", "planarsys", "psys"]):
+        #     return LinearPlanarSystemProblem()
         
         elif (problem_type == "matsys"):
             if (args and len(args) == 1):
@@ -19,6 +23,8 @@ class ProblemFactory(object):
                 except ValueError:
                     pass
             return MatrixLinearSystemProblem()
+    
         elif (problem_type in ["heap", "minheap"]):
             return HeapProblem()
+        
         return Problem()

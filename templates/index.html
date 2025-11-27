@@ -5,27 +5,35 @@
         <meta name="application-name" content="DChu's Problem Generator">
         <meta name="author" content="DChu">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>
-            DChu's Problem Generator
-        </title>
+        <title>DChu's Problem Generator</title>
+
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+
+
         <link href=" {{ url_for('static', filename='style.css') }}" rel="stylesheet "/>
+
+        <style>
+            @font-face {
+                font-family: Montserrat;
+                src: url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap");
+            }
+        </style>
 
     </head>
     <body>
-        <header>
-            <nav>
-                <a href="/">Home</a>
-            </nav>
-        </header>
+        {% import 'utils.html' as utils %}
+        {{ utils.header() }}
         <h1> DChu's Problem Generator </h1>
         <form name="form" method="post" id="command-form">
             <input type="text" name="command_line" class="courier-text"  placeholder="Enter a command..." required="true" autofocus="true" autocomplete="off" />
             <button type="submit" class="courier-text">Submit</button>
         </form>
         <h2>Commands:</h2>
-        <section id="help-section" class="courier-text">
+        <section id="help-section">
             <ul>
-                <li>"bst", "bstdraw", "bstproblem" -> Draw a Binary Search Tree.</li>
+                <li>"bst", "bstdraw", "bstproblem" -> Draw a <strong>Binary Search Tree</strong>.</li>
                 <li>"matsys [n]" -> Solve an nth dimension linear system of equations using Gaussian elimination.</li>
                 <li>"heap" -> Compute operations on a min-heap and draw out the result. </li>
             </ul>

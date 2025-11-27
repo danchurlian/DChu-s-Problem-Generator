@@ -25,6 +25,9 @@ def parse_command(input: str):
 
 # ---------------------------------------------------------------
 
+@app.route("/about", methods=["GET"])
+def about():
+    return render_template("about.html")
 
 @app.route("/", methods=["GET", "POST"])
 def index():
