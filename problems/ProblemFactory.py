@@ -3,6 +3,7 @@ from .BSTProblem import BSTProblem
 from .MatrixLinearSystemProblem import MatrixLinearSystemProblem
 from .LinearPlanarSystemProblem import LinearPlanarSystemProblem
 from .HeapProblem import HeapProblem
+from .ArithmeticProblem import ArithmeticProblem
 
 class ProblemFactory(object):
     def __init__(self):
@@ -23,6 +24,17 @@ class ProblemFactory(object):
                 except ValueError:
                     pass
             return MatrixLinearSystemProblem()
+
+        elif (problem_type in ["arith", "arithmetic"]):
+            if (args and len(args) == 1):
+                try:
+                    print(args)
+                    num_probs = int(args[0])
+                    if (0 <= num_probs and num_probs <= 20):
+                        return ArithmeticProblem(num_probs)
+                except ValueError:
+                    pass
+                    
     
         elif (problem_type in ["heap", "minheap"]):
             return HeapProblem()
