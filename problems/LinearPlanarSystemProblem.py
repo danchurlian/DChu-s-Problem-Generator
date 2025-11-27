@@ -9,7 +9,6 @@ def _get_matrix():
 class LinearPlanarSystemProblem(Problem):
     def __init__(self):
         super().__init__()
-    
 
     def _get_problem_str(self):
         return "linear planar system"

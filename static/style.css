@@ -30,6 +30,20 @@ header nav a {
     display: inline-block;
 }
 
+footer {
+    background-color: rgb(9, 17, 103);
+    height: 2em;
+
+    color: white;
+    font-family: Montsserat, sans-serif;
+    margin: 0px;
+
+    /* position: fixed; */
+}
+footer div {
+    padding: 0.5em;
+}
+
 h1, h2 {
     font-family: Montserrat, sans-serif;
     font-weight: bold;
