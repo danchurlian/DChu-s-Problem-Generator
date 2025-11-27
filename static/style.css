@@ -36,7 +36,6 @@ h1, h2 {
 }
 
 body > h2 {
-    /* margin-top: 0.5em; */
     margin-bottom: 0.25em;
 }
 
@@ -45,7 +44,7 @@ nav a {
 }
 
 section {
-    font-family: Montserrat, sans-serif;
+    font-family: Lato, sans-serif;
 }
 
 #help-section {
