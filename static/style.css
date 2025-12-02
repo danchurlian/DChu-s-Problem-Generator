@@ -4,7 +4,7 @@
 }
 
 body {
-    background-color: aliceblue;   
+    background-color: rgb(243, 248, 252);   
     margin: 0px;
 }
 
@@ -91,6 +91,7 @@ section {
     background-color: rgb(9, 17, 103);
     color: white;
     border-width: 0px;
+    border-radius: 5px;
 }
 
 #command-form input {
