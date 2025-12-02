@@ -28,7 +28,7 @@ def help_section():
     raw_str = f"""- `bst`, `bstdraw`, `bstproblem` | Draw a **Binary Search Tree**.
 - `matsys [n]` | Solve an nth dimension linear system of equations.
 - `heap` | Compute operations on a min-heap and draw out the result. 
-- `arith`, `arithmetic` [n] | Generate n number of arithmetic problems."""
+- `arith [n]`, `arithmetic [n]` | Generate n number of arithmetic problems."""
     html_inst = markdown.markdown(raw_str)
     print(html_inst)
     return html_inst
