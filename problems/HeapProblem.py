@@ -11,7 +11,7 @@ class HeapProblem(Problem):
     def _init_heaparr(self):
         arr = []
         for i in range(8):
-            ran = math.floor(random.random() * 9 + 1)
+            ran = math.floor(random.random() * 30 + 1)
             HeapProblem._add_to_heap(arr, ran)
         return arr
     
@@ -35,9 +35,10 @@ class HeapProblem(Problem):
         result = "The min-heap has been initialized as follows:\n"
         for n in self.heaparr:
             result += str(n) + " "
-        ran_insert = int(random.random() * 4 + 1)
         result += f"""\nDo the following instructions:
-- Please get the smallest element and remove it from the heap. Write down the result.
-- Please insert {ran_insert}. Write down the result.
-"""
+- Please get the smallest element and remove it from the heap. Write down the result."""
+        for i in range(3):
+            ran_insert = int(random.random() * 20 + 1)
+            result += f"""
+- Please insert {ran_insert}. Write down the resulting heap."""
         return result
