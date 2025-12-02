@@ -12,6 +12,15 @@ body > * {
     margin-left: 10px;
 }
 
+body code {
+    background-color: rgb(169, 155, 118);
+    color: white;
+    padding-left: .25em;
+    padding-right: .25em;
+    padding-bottom: .10em;
+    border-radius: 2px;
+}
+
 header {
     margin-left: 0px;
 }
