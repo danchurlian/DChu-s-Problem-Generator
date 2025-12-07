@@ -19,6 +19,7 @@ class ProblemFactory(object):
         #     return LinearPlanarSystemProblem()
         
         elif (problem_type == "matsys"):
+            errormsg = "MatsysError: "
             if (args and len(args) == 1):
                 try:
                     dimension = int(args[0])
@@ -26,35 +27,43 @@ class ProblemFactory(object):
                     if (1 <= dimension and dimension <= 5):
                         return MatrixLinearSystemProblem(dimension)
                     else:
-                        errormsg += "Argument must be between 1 and 5 inclusive!"
+                        errormsg += "Argument must be between 1 and 5 inclusive"
                 except ValueError:
-                    errormsg += "Argument must be an integer greater than 0!"
+                    errormsg += "Argument must be an integer greater than 0"
                     pass
+            else:
+                errormsg += "Missing integer argument between 1 and 5 inclusive"
 
         elif (problem_type in ["arith", "arithmetic"]):
+            errormsg = "ArthmeticError: "
             if (args and len(args) == 1):
                 try:
                     print(args)
                     num_probs = int(args[0])
-                    if (0 <= num_probs and num_probs <= 20):
+                    if (1 <= num_probs and num_probs <= 20):
                         return ArithmeticProblem(num_probs)
                     else:
-                        errormsg += "Argument must be between 0 and 20 inclusive!"
+                        errormsg += "Argument must be between 1 and 20 inclusive"
                 except ValueError:
-                    errormsg += "Argument must be an integer greater than 0!"
+                    errormsg += "Argument must be an integer between 1 and 20 inclusive"
                     pass
+            else:
+                errormsg += "Missing integer argument between 0 and 20 inclusive"
         
         elif (problem_type in ["sort", "sorting"]):
+            errormsg = "SortingError: "
             if (args and len(args) == 1):
                 try:
                     num_elts = int(args[0])
                     if (0 <= num_elts and num_elts <= 20):
                         return ArraySortingProblem(num_elts)
                     else:
-                        errormsg += "Argument must be between 0 and 20 inclusive!"
+                        errormsg += "Argument must be between 0 and 20 inclusive"
                 except ValueError:
-                    errormsg += "Argument must be an integer greater than 0!"
+                    errormsg += "Argument must be an integer greater than 0"
                     pass
+            else:
+                errormsg += "Missing integer argument between 0 and 20 inclusive"
                 
         elif (problem_type in ["heap", "minheap"]):
             return HeapProblem()
