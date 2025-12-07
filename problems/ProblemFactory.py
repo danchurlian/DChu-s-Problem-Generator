@@ -4,6 +4,7 @@ from .MatrixLinearSystemProblem import MatrixLinearSystemProblem
 from .LinearPlanarSystemProblem import LinearPlanarSystemProblem
 from .HeapProblem import HeapProblem
 from .ArithmeticProblem import ArithmeticProblem
+from .ArraySortingProblem import ArraySortingProblem
 
 class ProblemFactory(object):
     def __init__(self):
@@ -34,8 +35,16 @@ class ProblemFactory(object):
                         return ArithmeticProblem(num_probs)
                 except ValueError:
                     pass
-                    
-    
+        
+        elif (problem_type in ["sort", "sorting"]):
+            if (args and len(args) == 1):
+                try:
+                    num_elts = int(args[0])
+                    if (0 <= num_elts and num_elts <= 20):
+                        return ArraySortingProblem(num_elts)
+                except ValueError:
+                    pass
+                
         elif (problem_type in ["heap", "minheap"]):
             return HeapProblem()
         

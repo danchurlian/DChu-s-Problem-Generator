@@ -15,11 +15,6 @@ def parse_command(input: str):
         prob = ProblemFactory.createProblem(words[0], args)
     else:
         prob = ProblemFactory.createProblem(input)
-
-    # matrix 3x3 linear system
-    # 2x2 diff eq 1st order linear system
-    # priority queue
-    # binary search drawing
     raw_str = prob.problem_str.rstrip()
     lines = raw_str.split("\n")
     return lines
@@ -28,7 +23,8 @@ def help_section():
     raw_str = f"""- `bst`, `bstdraw`, `bstproblem` | Draw a **Binary Search Tree**.
 - `matsys [n]` | Solve an nth dimension linear system of equations.
 - `heap` | Compute operations on a min-heap and draw out the result. 
-- `arith [n]`, `arithmetic [n]` | Generate n number of arithmetic problems."""
+- `arith [n]`, `arithmetic [n]` | Generate n number of arithmetic problems.
+- `sort [n]`, `sorting [n]` | Generate n number of arithmetic problems."""
     html_inst = markdown.markdown(raw_str)
     print(html_inst)
     return html_inst
@@ -48,7 +44,7 @@ def index():
         output_lines = parse_command(user_input)
         return render_template("index.html", output_lines=output_lines, help_section_markdown=help_section_html)
     
-    return render_template("index.html", help_section_markdown=help_section_html)
+    return render_template("index.html", output_lines=["Enter a command above!"], help_section_markdown=help_section_html)
 
 def main():
     app.run()
