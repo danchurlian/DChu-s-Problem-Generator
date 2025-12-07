@@ -11,6 +11,7 @@ class ProblemFactory(object):
         pass
 
     def createProblem(problem_type: str, args: list = None) -> Problem:
+        errormsg: str = "Invalid command!\n"
         if (problem_type in ["bst", "bstdraw", "bstproblem"]):
             return BSTProblem()
 
@@ -21,10 +22,14 @@ class ProblemFactory(object):
             if (args and len(args) == 1):
                 try:
                     dimension = int(args[0])
-                    return MatrixLinearSystemProblem(dimension if 0 < dimension and dimension <= 5 else 3)
+                    print(dimension)
+                    if (1 <= dimension and dimension <= 5):
+                        return MatrixLinearSystemProblem(dimension)
+                    else:
+                        errormsg += "Argument must be between 1 and 5 inclusive!"
                 except ValueError:
+                    errormsg += "Argument must be an integer greater than 0!"
                     pass
-            return MatrixLinearSystemProblem()
 
         elif (problem_type in ["arith", "arithmetic"]):
             if (args and len(args) == 1):
@@ -33,7 +38,10 @@ class ProblemFactory(object):
                     num_probs = int(args[0])
                     if (0 <= num_probs and num_probs <= 20):
                         return ArithmeticProblem(num_probs)
+                    else:
+                        errormsg += "Argument must be between 0 and 20 inclusive!"
                 except ValueError:
+                    errormsg += "Argument must be an integer greater than 0!"
                     pass
         
         elif (problem_type in ["sort", "sorting"]):
@@ -42,10 +50,13 @@ class ProblemFactory(object):
                     num_elts = int(args[0])
                     if (0 <= num_elts and num_elts <= 20):
                         return ArraySortingProblem(num_elts)
+                    else:
+                        errormsg += "Argument must be between 0 and 20 inclusive!"
                 except ValueError:
+                    errormsg += "Argument must be an integer greater than 0!"
                     pass
                 
         elif (problem_type in ["heap", "minheap"]):
             return HeapProblem()
         
-        return Problem()
+        return Problem(errormsg)

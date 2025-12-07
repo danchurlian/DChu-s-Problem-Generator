@@ -21,10 +21,10 @@ def parse_command(input: str):
 
 def help_section():
     raw_str = f"""- `bst`, `bstdraw`, `bstproblem` | Draw a **Binary Search Tree**.
-- `matsys [n]` | Solve an nth dimension linear system of equations.
+- `matsys [n]` | Solve an nth dimension linear system of equations. 3 <= n <= 5
 - `heap` | Compute operations on a min-heap and draw out the result. 
-- `arith [n]`, `arithmetic [n]` | Generate n number of arithmetic problems.
-- `sort [n]`, `sorting [n]` | Generate n number of arithmetic problems."""
+- `arith [n]`, `arithmetic [n]` | Generate n number of arithmetic problems. 0 <= n <= 20
+- `sort [n]`, `sorting [n]` | Generate n number of arithmetic problems. 0 <= n <= 20"""
     html_inst = markdown.markdown(raw_str)
     print(html_inst)
     return html_inst
