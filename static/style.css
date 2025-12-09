@@ -12,13 +12,8 @@ body > * {
     margin-left: 10px;
 }
 
-body code {
-    background-color: rgb(169, 155, 118);
-    color: white;
-    padding-left: .25em;
-    padding-right: .25em;
-    padding-bottom: .10em;
-    border-radius: 2px;
+body section {
+    font-family: Lato, sans-serif;
 }
 
 header {
@@ -26,7 +21,7 @@ header {
 }
 
 header nav {
-    background-color: rgb(9, 17, 103);
+    background-color: rgb(5, 10, 65);
     height: 2em;
 
     margin: 0px;
@@ -40,7 +35,7 @@ header nav a {
 }
 
 footer {
-    background-color: rgb(9, 17, 103);
+    background-color: rgb(5, 10, 65);
     height: 2em;
 
     color: white;
@@ -66,21 +61,35 @@ nav a {
     color: white;
 }
 
-section {
-    font-family: Lato, sans-serif;
-}
-
 #help-section {
     background-color: rgb(243, 242, 248);
     width: 50%;
-
+    font-family: Lato, sans-serif;
     
-
     padding-top: 5px;
     padding-bottom: 5px;
     border-radius: 5px;
-
+    
     margin: 0.5em;
+}
+
+#help-section table {
+    table-layout: fixed;
+    border-collapse: collapse;
+}
+
+#help-section table th, td {
+    border: 3px solid rgb(78, 67, 90);
+    padding: 5px;
+}
+
+#help-section code {
+    background-color: rgb(104, 98, 82);
+    color: white;
+    padding-left: .25em;
+    padding-right: .25em;
+    padding-bottom: .10em;
+    border-radius: 2px;
 }
 
 #help-section li {
