@@ -15,8 +15,8 @@ class ProblemFactory(object):
         if (problem_type in ["bst", "bstdraw", "bstproblem"]):
             return BSTProblem()
 
-        # elif (problem_type in ["diffsys", "planarsys", "psys"]):
-        #     return LinearPlanarSystemProblem()
+        elif (problem_type in ["diffsys", "planarsys", "psys"]):
+            return LinearPlanarSystemProblem()
         
         elif (problem_type == "matsys"):
             errormsg = "MatsysError: "
