@@ -15,7 +15,9 @@ def _to_binary_string(num: int):
     return result
 
 class BinaryProblem(Problem):
-    def __init__(self):
+    # Options can be b2d, d2b
+    def __init__(self, option: str):
+        self.option = option
         super().__init__()
 
     def decimal_to_binary_prob(self):
@@ -35,5 +37,8 @@ class BinaryProblem(Problem):
 
     
     def _get_problem_str(self):
-        # return self.decimal_to_binary_prob()
-        return self.binary_to_decimal_prob()
+        if (self.option == "b2d"):
+            return self.binary_to_decimal_prob()
+        elif (self.option == "d2b"):
+            return self.decimal_to_binary_prob()
+        return f"Invalid argument for BinaryProblem command. Write the command as either the following:\nbinaryproblem b2d\nbinaryproblem d2b"

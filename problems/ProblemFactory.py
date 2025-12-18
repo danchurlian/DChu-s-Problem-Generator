@@ -69,7 +69,10 @@ class ProblemFactory(object):
         elif (problem_type in ["heap", "minheap"]):
             return HeapProblem()
         
-        elif (problem_type in ["d2b"]):
-            return BinaryProblem()
+        elif (problem_type in ["binaryprob"]):
+            if (args == None or len(args) == 0):
+                return BinaryProblem(None)
+            else:
+                return BinaryProblem(args[0])
         
         return Problem(errormsg)
