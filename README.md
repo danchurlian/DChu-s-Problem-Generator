@@ -11,7 +11,7 @@ There is a help section that lists the syntax for the commands and arguments.
 | Heap Problem | Generates a minimum binary heap that is represented using an array of integers. This problem asks the user to insert numbers to the heap but also remove numbers from the heap and prompts the user to trace and write down the results on paper. |
 | Array Sorting Problem | Generates a array of random numbers, and asks the user to trace sorting algorithms on paper. |
 | 2x2 Linear Planar System Problem | Generates a 2x2 matrix, and asks the user to find the eigenvalues and eigenvectors of it, and in the context of differential equations, write the general solution to the linear planar system. |
-| Binary Problem | Two cases: (1) Generates a list of five 8-bit binary numbers and prompts the user to write down those numbers in decimal form. (2) Generates a list of five unsigned decimal integers (0-255) and prompts the user to write down those numbers in binary form. |  
+| Binary Problem | Three cases: (1) Generates a list of five 8-bit binary numbers and prompts the user to write down those numbers in decimal form. (2) Generates a list of five unsigned decimal integers (0-255) and prompts the user to write down those numbers in binary form. (3) Generates a list of five hexadecimal integers (00-ff) and prompts the user to write down those numbers in decimal form. |  
 
 ## Development process
 I started out working with the Flask framework in order to carry out this web application. I set up the `app.py` and `index.html` files as I slowly learned how Flask functions and decorators work. The html file started out very simple. I learned about `meta` tags in the head portion of file, and I put a simple form that contained a field of text and a submit button.  

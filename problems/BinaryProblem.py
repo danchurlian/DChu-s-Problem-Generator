@@ -34,6 +34,14 @@ class BinaryProblem(Problem):
             nums.append(_to_binary_string(random_num))
         result: str = f"The list of binary numbers are: {nums}.\nWrite those numbers in decimal."
         return result
+    
+    def hexa_to_decimal_prob(self):
+        nums = []
+        for i in range(5):
+            random_num: int = int(random.random() * 256)
+            nums.append(hex(random_num))
+        result: str = f"The list of random hexadecimal numbers are: {nums}.\nWrite those numbers in decimal."
+        return result 
 
     
     def _get_problem_str(self):
@@ -41,4 +49,6 @@ class BinaryProblem(Problem):
             return self.binary_to_decimal_prob()
         elif (self.option == "d2b"):
             return self.decimal_to_binary_prob()
+        elif (self.option == "h2d"):
+            return self.hexa_to_decimal_prob()
         return f"Invalid argument for BinaryProblem command. Write the command as either the following:\nbinaryproblem b2d\nbinaryproblem d2b"
