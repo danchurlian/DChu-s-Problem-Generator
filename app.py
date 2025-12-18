@@ -28,7 +28,7 @@ def help_section():
 |`arith n`, `arithmetic n` | Generate n number of arithmetic problems. 0 <= n <= 20 |  
 |`sort n`, `sorting n` | Generate n number of arithmetic problems. 0 <= n <= 20 |  
 |`psys`, `diffsys`, `planarsys` | Generate a 2x2 matrix which has integer eigenvalues and integer eigenvectors. |  
-|`binaryprob [b2d | d2b | h2d]` | Generate five random numbers between 0-255 in either binary, decimal, or hexadecimal and write them down in other number systems. | 
+|`conv [b | d | h]` | Generate five random numbers between 0-255 in either binary, decimal, or hexadecimal and write them down in other number systems. | 
 """
     
     html_inst = markdown.markdown(raw_str, extensions=['tables'])
