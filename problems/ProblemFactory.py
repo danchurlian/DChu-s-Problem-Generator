@@ -5,7 +5,7 @@ from .LinearPlanarSystemProblem import LinearPlanarSystemProblem
 from .HeapProblem import HeapProblem
 from .ArithmeticProblem import ArithmeticProblem
 from .ArraySortingProblem import ArraySortingProblem
-from .BinaryProblem import BinaryProblem
+from .NumberConversionProblem import NumberConversionProblem
 
 class ProblemFactory(object):
     def __init__(self):
@@ -69,10 +69,10 @@ class ProblemFactory(object):
         elif (problem_type in ["heap", "minheap"]):
             return HeapProblem()
         
-        elif (problem_type in ["binaryprob"]):
+        elif (problem_type in ["conv"]):
             if (args == None or len(args) == 0):
-                return BinaryProblem(None)
+                return NumberConversionProblem(None)
             else:
-                return BinaryProblem(args[0])
+                return NumberConversionProblem(args[0])
         
         return Problem(errormsg)

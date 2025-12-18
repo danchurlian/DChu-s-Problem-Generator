@@ -14,7 +14,7 @@ def _to_binary_string(num: int):
 
     return result
 
-class BinaryProblem(Problem):
+class NumberConversionProblem(Problem):
     # Options can be b2d, d2b
     def __init__(self, option: str):
         self.option = option
@@ -24,7 +24,7 @@ class BinaryProblem(Problem):
         nums = []
         for i in range(5):
             nums.append(int(random.random() * 256))
-        result: str = f"The list of decimal numbers are: {nums}.\nWrite those numbers in binary\nWrite those numbers in hexadecimal."
+        result: str = f"The list of decimal numbers are: {nums}.\nWrite those numbers in binary.\nWrite those numbers in hexadecimal."
         return result 
     
     def binary_prob(self):
