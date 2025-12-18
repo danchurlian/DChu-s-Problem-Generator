@@ -1,13 +1,39 @@
 from .Problem import Problem
 import random
 
+# Precondition: num must be between 0-255.
+# 101 --> "01100101"
+def _to_binary_string(num: int):
+    result: str = ""
+    for i in range(8):
+        exponent: int = 7-i
+        divisor = 2 ** exponent
+        digit = int(num / (divisor))
+        num %= divisor
+        result += f"{digit}"
+
+    return result
+
 class BinaryProblem(Problem):
     def __init__(self):
         super().__init__()
-    
-    def _get_problem_str(self):
+
+    def decimal_to_binary_prob(self):
         nums = []
         for i in range(5):
             nums.append(int(random.random() * 256))
-        result: str = f"The list of numbers are: {nums}.\nWrite those numbers in binary."
+        result: str = f"The list of decimal numbers are: {nums}.\nWrite those numbers in binary."
         return result 
+    
+    def binary_to_decimal_prob(self):
+        nums = []
+        for i in range(5):
+            random_num: int = int(random.random() * 256)
+            nums.append(_to_binary_string(random_num))
+        result: str = f"The list of binary numbers are: {nums}.\nWrite those numbers in decimal."
+        return result
+
+    
+    def _get_problem_str(self):
+        # return self.decimal_to_binary_prob()
+        return self.binary_to_decimal_prob()
