@@ -20,35 +20,35 @@ class BinaryProblem(Problem):
         self.option = option
         super().__init__()
 
-    def decimal_to_binary_prob(self):
+    def decimal_prob(self):
         nums = []
         for i in range(5):
             nums.append(int(random.random() * 256))
-        result: str = f"The list of decimal numbers are: {nums}.\nWrite those numbers in binary."
+        result: str = f"The list of decimal numbers are: {nums}.\nWrite those numbers in binary\nWrite those numbers in hexadecimal."
         return result 
     
-    def binary_to_decimal_prob(self):
+    def binary_prob(self):
         nums = []
         for i in range(5):
             random_num: int = int(random.random() * 256)
             nums.append(_to_binary_string(random_num))
-        result: str = f"The list of binary numbers are: {nums}.\nWrite those numbers in decimal."
+        result: str = f"The list of binary numbers are: {nums}.\nWrite those numbers in hexadecimal.\nWrite those numbers in decimal."
         return result
     
-    def hexa_to_decimal_prob(self):
+    def hex_prob(self):
         nums = []
         for i in range(5):
             random_num: int = int(random.random() * 256)
             nums.append(hex(random_num))
-        result: str = f"The list of random hexadecimal numbers are: {nums}.\nWrite those numbers in decimal."
+        result: str = f"The list of random hexadecimal numbers are: {nums}.\nWrite those numbers in binary.\nWrite those numbers in decimal."
         return result 
 
     
     def _get_problem_str(self):
-        if (self.option == "b2d"):
-            return self.binary_to_decimal_prob()
-        elif (self.option == "d2b"):
-            return self.decimal_to_binary_prob()
-        elif (self.option == "h2d"):
-            return self.hexa_to_decimal_prob()
+        if (self.option == "b"):
+            return self.binary_prob()
+        elif (self.option == "d"):
+            return self.decimal_prob()
+        elif (self.option == "h"):
+            return self.hex_prob()
         return f"Invalid argument for BinaryProblem command. Write the command as either the following:\nbinaryproblem b2d\nbinaryproblem d2b"
