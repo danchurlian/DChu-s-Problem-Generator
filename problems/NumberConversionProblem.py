@@ -51,4 +51,4 @@ class NumberConversionProblem(Problem):
             return self.decimal_prob()
         elif (self.option == "h"):
             return self.hex_prob()
-        return f"Invalid argument for BinaryProblem command. Write the command as either the following:\nbinaryproblem b2d\nbinaryproblem d2b"
+        return f"Invalid argument for NumberConversionProblem command. Write the command as either the following:\nconv d\nconv b\nconv h"
