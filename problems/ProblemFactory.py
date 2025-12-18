@@ -5,6 +5,7 @@ from .LinearPlanarSystemProblem import LinearPlanarSystemProblem
 from .HeapProblem import HeapProblem
 from .ArithmeticProblem import ArithmeticProblem
 from .ArraySortingProblem import ArraySortingProblem
+from .BinaryProblem import BinaryProblem
 
 class ProblemFactory(object):
     def __init__(self):
@@ -67,5 +68,8 @@ class ProblemFactory(object):
                 
         elif (problem_type in ["heap", "minheap"]):
             return HeapProblem()
+        
+        elif (problem_type in ["d2b"]):
+            return BinaryProblem()
         
         return Problem(errormsg)
