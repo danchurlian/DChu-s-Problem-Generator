@@ -21,7 +21,7 @@ class RootExpansion(object):
         expression: str = ""
         for i in range(self.num_roots):
             expression += _new_binomial()
-        return f"""
+        return f"""Please expand the following:
 <math>
     <mrow>
         {expression}
