@@ -14,12 +14,12 @@ def _new_binomial():
 
 
 class RootExpansion(object):
-    def __init__(self):
-        pass
+    def __init__(self, num_roots: int):
+        self.num_roots = num_roots
 
     def get_mathml(self):
         expression: str = ""
-        for i in range(3):
+        for i in range(self.num_roots):
             expression += _new_binomial()
         return f"""
 <math>

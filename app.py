@@ -21,9 +21,30 @@ def parse_command(input: str):
 
 # Returns a block of MathML
 def parse_math_command(input: str) -> str:
-    problem = RootExpansion()
-    return problem.get_mathml()
+    input = input.strip()
 
+    output: str = "Invalid command!"
+    words: list[str] = input.split(" ")
+    command: str = words[0] 
+    args = words[1:] if len(words) > 1 else None
+
+    if (command in ["expand"]):
+        try:
+            num_roots = int(args[0])
+            if (num_roots < 2 or num_roots > 5):
+                raise ValueError()
+            problem = RootExpansion(num_roots)
+            output = problem.get_mathml()
+        except TypeError as te:
+            output = "Must include a single argument that is an integer!"
+        except IndexError as ie:
+            output = "Only one argument is needed!"
+        except ValueError as ve:
+            output = "Argument must be an integer between 2 and 5!"
+
+    return output
+
+# Markdown language containing the table of commands and description.
 def help_section():
     raw_str = f"""
 | Commands | Description |  
