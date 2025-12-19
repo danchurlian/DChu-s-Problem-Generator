@@ -9,7 +9,7 @@ def _new_binomial():
         second_part = f"<mo>+</mo> <mn>{-root}</mn>"
 
     return f"""
-(<mi>x</mi> {second_part})
+<mo>(</mo><mi>x</mi> {second_part}<mo>)</mo>
 """
 
 
