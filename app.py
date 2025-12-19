@@ -1,4 +1,5 @@
 from problems.ProblemFactory import ProblemFactory
+from mathproblems.RootExpansion import RootExpansion
 
 from flask import Flask, render_template, request
 import markdown
@@ -18,6 +19,11 @@ def parse_command(input: str):
     lines = raw_str.split("\n")
     return lines
 
+# Returns a block of MathML
+def parse_math_command(input: str) -> str:
+    problem = RootExpansion()
+    return problem.get_mathml()
+
 def help_section():
     raw_str = f"""
 | Commands | Description |  
@@ -36,6 +42,15 @@ def help_section():
     return html_inst
 
 # ---------------------------------------------------------------
+
+@app.route("/math_problem_generator", methods=["GET", "POST"])
+def math_problem_generator():
+    if (request.method == "POST"):
+        user_input: str = request.form["command_line"]
+        mathml_block: str = parse_math_command(user_input)
+        return render_template("math_problem_generator.html", math_problem=mathml_block)
+        print(f"This is a post request with {user_input}")
+    return render_template("math_problem_generator.html")
 
 @app.route("/about", methods=["GET"])
 def about():
