@@ -30,18 +30,8 @@
             <button type="submit" class="courier-text">Submit</button>
         </form>
 
-        <aside>
+        <aside id="math-display">
             {{ math_problem | safe }}            
-            <!-- <math>
-                <mfrac>
-                    <msup>
-                        <mn>1</mn> <mn>2</mn>
-                    </msup>
-                    <msqrt>
-                        <mn>2</mn>
-                    </msqrt>
-                </mfrac>
-            </math> -->
         </aside>
 
         {{ utils.footer() }}
