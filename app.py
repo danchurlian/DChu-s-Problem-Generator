@@ -1,4 +1,5 @@
 from problems.ProblemFactory import ProblemFactory
+from mathproblems.MathProblemFactory import MathProblemFactory
 from mathproblems.RootExpansion import RootExpansion
 from mathproblems.DerivativePolynomial import DerivativePolynomial
 
@@ -6,7 +7,6 @@ from flask import Flask, render_template, request
 import markdown
 
 app = Flask(__name__)
-
 
 def parse_command(input: str):
     input = input.strip()
@@ -24,35 +24,10 @@ def parse_command(input: str):
 def parse_math_command(input: str) -> str:
     input = input.strip()
 
-    output: str = "Invalid command!"
     words: list[str] = input.split(" ")
     command: str = words[0] 
     args = words[1:] if len(words) > 1 else []
-
-    if (command in ["expand"]):
-        try:
-            num_roots = int(args[0])
-            if (num_roots < 2 or num_roots > 5):
-                raise ValueError()
-            problem = RootExpansion(num_roots)
-            output = problem.get_mathml()
-        except TypeError as te:
-            output = "Must include a single argument that is an integer!"
-        except IndexError as ie:
-            output = "Only one argument is needed!"
-        except ValueError as ve:
-            output = "Argument must be an integer between 2 and 5!"
-    elif (command in ["derive"]):
-        try:
-            degree: int = int(args[0])
-            if (degree < 1 or degree > 5):
-                raise ValueError()
-            problem = DerivativePolynomial(degree)
-            output = problem.get_mathml()
-        except Exception:
-            output = "There must be exactly one argument that is an integer between 1 and 5!"
-
-    return output
+    return MathProblemFactory.create_problem_output(command, args) 
 
 # Markdown language containing the table of commands and description.
 def help_section():
@@ -72,7 +47,7 @@ def help_section():
     print(html_inst)
     return html_inst
 
-# ---------------------------------------------------------------
+# --------------------------------------------------------------------------------
 
 @app.route("/math_problem_generator", methods=["GET", "POST"])
 def math_problem_generator():
@@ -80,7 +55,6 @@ def math_problem_generator():
         user_input: str = request.form["command_line"]
         mathml_block: str = parse_math_command(user_input)
         return render_template("math_problem_generator.html", math_problem=mathml_block)
-        print(f"This is a post request with {user_input}")
     return render_template("math_problem_generator.html")
 
 @app.route("/about", methods=["GET"])
