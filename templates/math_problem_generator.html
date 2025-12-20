@@ -30,6 +30,14 @@
             <button type="submit" class="courier-text">Submit</button>
         </form>
 
+        <h2>
+            Commands:
+        </h2>
+
+        <section id="help-section">
+            {{ math_help_section_markdown | safe }}
+        </section>
+
         <aside id="math-display">
             {{ math_problem | safe }}            
         </aside>

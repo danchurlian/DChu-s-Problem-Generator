@@ -34,7 +34,7 @@ def help_section():
     raw_str = f"""
 | Commands | Description |  
 |:--|:--|  
-| `bst`, `bstdraw`, `bstproblem` | Draw a **Binary Search Tree**. |  
+|`bst`, `bstdraw`, `bstproblem` | Draw a **Binary Search Tree**. |  
 |`matsys n` | Solve an nth dimension linear system of equations. 3 <= n <= 5 |
 |`heap` | Compute operations on a min-heap and draw out the result. |  
 |`arith n`, `arithmetic n` | Generate n number of arithmetic problems. 0 <= n <= 20 |  
@@ -47,15 +47,27 @@ def help_section():
     print(html_inst)
     return html_inst
 
+def math_help_section() -> str:
+    raw_str: str = f"""
+| Commands | Description |
+|:--|:--|
+|`expand n` | Expand n binomials algebraically. 2 <= n <= 5 | 
+|`derive n` | Generate a polynomial of degree n and take the derivative of it. 1 <= n <= 5 |
+"""
+    html_inst = markdown.markdown(raw_str, extensions=['tables'])
+    print(html_inst)
+    return html_inst
 # --------------------------------------------------------------------------------
 
 @app.route("/math_problem_generator", methods=["GET", "POST"])
 def math_problem_generator():
+    math_help_table: str = math_help_section()
+
     if (request.method == "POST"):
         user_input: str = request.form["command_line"]
         mathml_block: str = parse_math_command(user_input)
-        return render_template("math_problem_generator.html", math_problem=mathml_block)
-    return render_template("math_problem_generator.html")
+        return render_template("math_problem_generator.html", math_problem=mathml_block, math_help_section_markdown=math_help_table)
+    return render_template("math_problem_generator.html", math_help_section_markdown=math_help_table)
 
 @app.route("/about", methods=["GET"])
 def about():
