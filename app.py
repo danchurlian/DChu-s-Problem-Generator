@@ -27,7 +27,7 @@ def parse_math_command(input: str) -> str:
     output: str = "Invalid command!"
     words: list[str] = input.split(" ")
     command: str = words[0] 
-    args = words[1:] if len(words) > 1 else None
+    args = words[1:] if len(words) > 1 else []
 
     if (command in ["expand"]):
         try:
@@ -43,8 +43,14 @@ def parse_math_command(input: str) -> str:
         except ValueError as ve:
             output = "Argument must be an integer between 2 and 5!"
     elif (command in ["derive"]):
-        problem = DerivativePolynomial()
-        output = problem.get_mathml()
+        try:
+            degree: int = int(args[0])
+            if (degree < 1 or degree > 5):
+                raise ValueError()
+            problem = DerivativePolynomial(degree)
+            output = problem.get_mathml()
+        except Exception:
+            output = "There must be exactly one argument that is an integer between 1 and 5!"
 
     return output
 
