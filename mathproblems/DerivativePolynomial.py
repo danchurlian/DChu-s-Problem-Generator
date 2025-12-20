@@ -39,7 +39,13 @@ class DerivativePolynomial(object):
             expression += self.new_term(i) 
         return f"""
 <math>
-    {expression}
+    <mfrac>
+        <mrow><mi>d</mi></mrow>
+        <mrow><mi>d</mi><mi>x</mi></mrow>
+    </mfrac>
+    <mo>(</mo>
+        {expression}
+    <mo>)</mo>
 </math>
 """
     

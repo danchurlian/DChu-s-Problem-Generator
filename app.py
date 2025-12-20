@@ -1,5 +1,6 @@
 from problems.ProblemFactory import ProblemFactory
 from mathproblems.RootExpansion import RootExpansion
+from mathproblems.DerivativePolynomial import DerivativePolynomial
 
 from flask import Flask, render_template, request
 import markdown
@@ -41,6 +42,9 @@ def parse_math_command(input: str) -> str:
             output = "Only one argument is needed!"
         except ValueError as ve:
             output = "Argument must be an integer between 2 and 5!"
+    elif (command in ["derive"]):
+        problem = DerivativePolynomial()
+        output = problem.get_mathml()
 
     return output
 
