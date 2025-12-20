@@ -6,7 +6,7 @@ class DerivativePolynomial(object):
         pass
 
     # MathML string
-    def new_term(self, exponent: int) -> str:
+    def new_term(self, exponent: int, start: bool) -> str:
         result: str = ""
         coef: int = int(random.random() * 13 - 6)
         if (coef != 0):
@@ -17,7 +17,10 @@ class DerivativePolynomial(object):
                 if (coef < 0):
                     result = f"<mo>-</mo><mn>{-coef}</mn>"
                 else:
-                    result += f"<mo>+</mo><mn>{coef}</mn>"
+                    if start:
+                        result += f"<mn>{coef}</mn>" 
+                    else:
+                        result += f"<mo>+</mo><mn>{coef}</mn>"
 
             exponential: str = ""
             if (exponent > 1):
@@ -30,13 +33,11 @@ class DerivativePolynomial(object):
 
         return result
     
-    # def get_polynomial(self) -> str:
-
 
     def get_mathml(self):
         expression: str = ""
         for i in range(self.degree, -1, -1):
-            expression += self.new_term(i) 
+            expression += self.new_term(i, False) if i < self.degree else self.new_term(i, True)
         return f"""
 <math>
     <mfrac>
