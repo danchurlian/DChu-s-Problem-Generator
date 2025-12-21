@@ -51,6 +51,7 @@ def math_help_section() -> str:
     raw_str: str = f"""
 | Commands | Description |
 |:--|:--|
+|`arith n` | Generate n numbers of basic arithmetic problems. 1 <= n <= 8 | 
 |`expand n` | Expand n binomials algebraically. 2 <= n <= 5 | 
 |`derive n` | Generate a polynomial of degree n and take the derivative of it. 1 <= n <= 5 |
 |`int n` | Generate a polynomial of degree n and evaluate the integral of it. |
