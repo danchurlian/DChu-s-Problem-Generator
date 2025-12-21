@@ -1,4 +1,5 @@
 from .DerivativePolynomial import DerivativePolynomial
+from .IntegralPolynomial import IntegralPolynomial
 from .RootExpansion import RootExpansion
 
 class MathProblemFactory(object):
@@ -23,6 +24,16 @@ class MathProblemFactory(object):
                 if (degree < 1 or degree > 5):
                     raise ValueError()
                 problem = DerivativePolynomial(degree)
+                output = problem.get_mathml()
+            except Exception:
+                output = "There must be exactly one argument that is an integer between 1 and 5!"
+        
+        elif (command in ["int"]):
+            try:
+                degree: int = int(args[0])
+                if (degree < 1 or degree > 5):
+                    raise ValueError()
+                problem = IntegralPolynomial(degree)
                 output = problem.get_mathml()
             except Exception:
                 output = "There must be exactly one argument that is an integer between 1 and 5!"
