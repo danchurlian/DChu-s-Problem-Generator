@@ -1,11 +1,21 @@
 from .DerivativePolynomial import DerivativePolynomial
 from .IntegralPolynomial import IntegralPolynomial
 from .RootExpansion import RootExpansion
+from .ArithmeticProblem import ArithmeticProblem
 
 class MathProblemFactory(object):
     def create_problem_output(command: str, args: list[str]) -> str:
         output: str = "Invalid command!"
-        if (command in ["expand"]):
+        if (command in ["arith"]):
+            try:
+                num_probs = int(args[0])
+                if (num_probs < 1 or num_probs > 8):
+                    raise ValueError()
+                problem = ArithmeticProblem(num_probs) 
+                output = problem.get_mathml()
+            except Exception:
+                output = "Argument must be a single integer between 1 and 8!"
+        elif (command in ["expand"]):
             try:
                 num_roots = int(args[0])
                 if (num_roots < 2 or num_roots > 5):
