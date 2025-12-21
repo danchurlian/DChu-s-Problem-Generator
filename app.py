@@ -53,9 +53,9 @@ def math_help_section() -> str:
 |:--|:--|
 |`expand n` | Expand n binomials algebraically. 2 <= n <= 5 | 
 |`derive n` | Generate a polynomial of degree n and take the derivative of it. 1 <= n <= 5 |
+|`int n` | Generate a polynomial of degree n and evaluate the integral of it. |
 """
     html_inst = markdown.markdown(raw_str, extensions=['tables'])
-    print(html_inst)
     return html_inst
 # --------------------------------------------------------------------------------
 
