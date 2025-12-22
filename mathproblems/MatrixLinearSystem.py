@@ -31,15 +31,23 @@ class MatrixLinearSystem(object):
 
     def get_mathml(self) -> str:
         matrix_str: str = ""
+        column_specs: str = ""
         for i in range(len(self.sols)):
             matrix_str += self._new_equation()
+        for i in range(self.dimension):
+            if (i == self.dimension - 1):
+                column_specs += "solid"
+            else:
+                column_specs += "none "
+        column_specs = column_specs.strip()
+
         result: str = f"""
 <div>Given this augmented matrix, solve the following linear system below.</div>
 </br>
 <math>
     <mrow>
         <mo>[</mo>
-        <mtable columnlines="none none solid">
+        <mtable columnlines="{column_specs}">
             {matrix_str}
         </mtable>
         <mo>]</mo>
