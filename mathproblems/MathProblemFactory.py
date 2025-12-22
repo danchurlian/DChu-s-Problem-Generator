@@ -18,8 +18,14 @@ class MathProblemFactory(object):
                 output = "Argument must be a single integer between 1 and 8!"
 
         elif (command in ["matsys"]):
-            problem = MatrixLinearSystem(3)
-            output = problem.get_mathml()
+            try:
+                dimension: int = int(args[0])
+                if (dimension < 2 or dimension > 5):
+                    raise ValueError()
+                problem = MatrixLinearSystem(dimension)
+                output = problem.get_mathml()
+            except Exception as e:
+                output = "Argument must be an integer between 2 and 5!"
 
         elif (command in ["expand"]):
             try:
