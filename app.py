@@ -37,7 +37,6 @@ def help_section():
 |`bst`, `bstdraw`, `bstproblem` | Draw a **Binary Search Tree**. |  
 |`matsys n` | Solve an nth dimension linear system of equations. 3 <= n <= 5 |
 |`heap` | Compute operations on a min-heap and draw out the result. |  
-|`arith n`, `arithmetic n` | Generate n number of arithmetic problems. 0 <= n <= 20 |  
 |`sort n`, `sorting n` | Generate n number of arithmetic problems. 0 <= n <= 20 |  
 |`psys`, `diffsys`, `planarsys` | Generate a 2x2 matrix which has integer eigenvalues and integer eigenvectors. |  
 |`conv [b | d | h]` | Generate five random numbers between 0-255 in either binary, decimal, or hexadecimal and write them down in other number systems. | 

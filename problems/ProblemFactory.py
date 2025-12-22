@@ -35,21 +35,21 @@ class ProblemFactory(object):
             else:
                 errormsg += "Missing integer argument between 1 and 5 inclusive"
 
-        elif (problem_type in ["arith", "arithmetic"]):
-            errormsg = "ArthmeticError: "
-            if (args and len(args) == 1):
-                try:
-                    print(args)
-                    num_probs = int(args[0])
-                    if (1 <= num_probs and num_probs <= 20):
-                        return ArithmeticProblem(num_probs)
-                    else:
-                        errormsg += "Argument must be between 1 and 20 inclusive"
-                except ValueError:
-                    errormsg += "Argument must be an integer between 1 and 20 inclusive"
-                    pass
-            else:
-                errormsg += "Missing integer argument between 0 and 20 inclusive"
+        # elif (problem_type in ["arith", "arithmetic"]):
+        #     errormsg = "ArthmeticError: "
+        #     if (args and len(args) == 1):
+        #         try:
+        #             print(args)
+        #             num_probs = int(args[0])
+        #             if (1 <= num_probs and num_probs <= 20):
+        #                 return ArithmeticProblem(num_probs)
+        #             else:
+        #                 errormsg += "Argument must be between 1 and 20 inclusive"
+        #         except ValueError:
+        #             errormsg += "Argument must be an integer between 1 and 20 inclusive"
+        #             pass
+        #     else:
+        #         errormsg += "Missing integer argument between 0 and 20 inclusive"
         
         elif (problem_type in ["sort", "sorting"]):
             errormsg = "SortingError: "
