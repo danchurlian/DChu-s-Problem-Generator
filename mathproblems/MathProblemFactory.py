@@ -2,6 +2,7 @@ from .DerivativePolynomial import DerivativePolynomial
 from .IntegralPolynomial import IntegralPolynomial
 from .RootExpansion import RootExpansion
 from .ArithmeticProblem import ArithmeticProblem
+from .MatrixLinearSystem import MatrixLinearSystem
 
 class MathProblemFactory(object):
     def create_problem_output(command: str, args: list[str]) -> str:
@@ -15,6 +16,11 @@ class MathProblemFactory(object):
                 output = problem.get_mathml()
             except Exception:
                 output = "Argument must be a single integer between 1 and 8!"
+
+        elif (command in ["matsys"]):
+            problem = MatrixLinearSystem(3)
+            output = problem.get_mathml()
+
         elif (command in ["expand"]):
             try:
                 num_roots = int(args[0])
