@@ -23,7 +23,7 @@
     <body>
         {% import 'utils.html' as utils %}
         {{ utils.header() }}
-        <h1>Math Problem Generator</h1>
+        <h1>DChu's Math Problem Generator</h1>
 
         <form name="form" method="post" id="command-form">
             <input type="text" name="command_line" class="courier-text"  placeholder="Enter a command..." required="true" autofocus="true" autocomplete="off" />
@@ -37,6 +37,8 @@
         <section id="help-section">
             {{ math_help_section_markdown | safe }}
         </section>
+
+        <h2>Output:</h2>
 
         <aside id="math-display">
             {{ math_problem | safe }}            
