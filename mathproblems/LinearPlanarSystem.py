@@ -13,8 +13,6 @@ def _p_random():
         numerator = (D + c*d)
         print(numerator, numerator % a)
     b = int((numerator) / a)
-
-    # print(f"{a} {b} - {c} {d} = {D}")
     
     return a,b,c,d
 
@@ -28,12 +26,6 @@ def _get_matrix():
     a,b,c,d = _p_random()
     diag = np.array([[e_value_1, 0], [0, e_value_2]], np.int32)
     p = np.array([[a, c], [d, b]], np.int32)
-    # e_vect_1 = np.ndarray(
-    #     [_e_vect_random()],
-    #     [math.floor(random.random() * 7 - 3)], np.int32)
-    # e_vect_2 = np.ndarray(
-    #     [math.floor(random.random() * 7 - 3)],
-    #     [math.floor(random.random() * 7 - 3)], np.int32)
     
     result = None
     try:
