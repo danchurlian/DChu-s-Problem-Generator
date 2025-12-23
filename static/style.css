@@ -133,12 +133,16 @@ nav a {
 #math-display {
     /* float: right; */
     display: block;
-    width: 45vw;
-    height: 50vh;
+    width: 50vw;
+    /* height: auto; */
     background-color: white;
     border-radius: 3px;
 
-    font-family: Lato, sans-serif;
-    font-size: 2rem;
+    font-family: serif;
+    font-size: 1.5rem;
     margin-right: 1em;
+}
+
+#math-display > * {
+    padding: 0.5rem;
 }

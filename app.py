@@ -64,12 +64,13 @@ def math_help_section() -> str:
 @app.route("/math_problem_generator", methods=["GET", "POST"])
 def math_problem_generator():
     math_help_table: str = math_help_section()
+    mathml_block: str = "<div>Enter a command above!</div>" 
 
     if (request.method == "POST"):
         user_input: str = request.form["command_line"]
-        mathml_block: str = parse_math_command(user_input)
-        return render_template("math_problem_generator.html", math_problem=mathml_block, math_help_section_markdown=math_help_table)
-    return render_template("math_problem_generator.html", math_help_section_markdown=math_help_table)
+        mathml_block = parse_math_command(user_input)
+
+    return render_template("math_problem_generator.html", math_problem=mathml_block, math_help_section_markdown=math_help_table)
 
 @app.route("/about", methods=["GET"])
 def about():
