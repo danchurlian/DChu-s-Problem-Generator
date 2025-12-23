@@ -3,6 +3,7 @@ from .IntegralPolynomial import IntegralPolynomial
 from .RootExpansion import RootExpansion
 from .ArithmeticProblem import ArithmeticProblem
 from .MatrixLinearSystem import MatrixLinearSystem
+from .LinearPlanarSystem import LinearPlanarSystem
 
 class MathProblemFactory(object):
     def create_problem_output(command: str, args: list[str]) -> str:
@@ -26,6 +27,10 @@ class MathProblemFactory(object):
                 output = problem.get_mathml()
             except Exception as e:
                 output = "Argument must be an integer between 2 and 5!"
+        
+        elif (command in ["psys"]):
+            problem = LinearPlanarSystem()
+            output = problem.get_mathml()
 
         elif (command in ["expand"]):
             try:
