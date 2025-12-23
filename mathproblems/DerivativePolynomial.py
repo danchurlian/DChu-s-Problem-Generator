@@ -13,14 +13,16 @@ class DerivativePolynomial(object):
 <div>
     Write down the 1st derivative of the expression below.
 </div>
-<math>
-    <mfrac>
-        <mrow><mi>d</mi></mrow>
-        <mrow><mi>d</mi><mi>x</mi></mrow>
-    </mfrac>
-    <mo>(</mo>
-        {expression}
-    <mo>)</mo>
-</math>
+<div>
+    <math>
+        <mfrac>
+            <mrow><mi>d</mi></mrow>
+            <mrow><mi>d</mi><mi>x</mi></mrow>
+        </mfrac>
+        <mo>(</mo>
+            {expression}
+        <mo>)</mo>
+    </math>
+</div>
 """
     

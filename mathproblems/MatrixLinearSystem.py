@@ -43,15 +43,16 @@ class MatrixLinearSystem(object):
 
         result: str = f"""
 <div>Given this augmented matrix, solve the following linear system below.</div>
-</br>
-<math>
-    <mrow>
-        <mo>[</mo>
-        <mtable columnlines="{column_specs}">
-            {matrix_str}
-        </mtable>
-        <mo>]</mo>
-    </mrow>
-</math>
+<div>
+    <math>
+        <mrow>
+            <mo>[</mo>
+            <mtable columnlines="{column_specs}">
+                {matrix_str}
+            </mtable>
+            <mo>]</mo>
+        </mrow>
+    </math>
+</div>
 """
         return result

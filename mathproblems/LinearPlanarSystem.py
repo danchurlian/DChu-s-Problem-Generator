@@ -55,15 +55,15 @@ class LinearPlanarSystem(object):
         matrix_str += "</mtable>\n<mo>]</mo>"
         return f"""
 <div>Given this 2x2 matrix:</div>
-</br>
-<math>
-    <mrow>
-        <mi>A</mi>
-        <mo>=</mo>
-        {matrix_str}
-    </mrow>
-</math>
-</br>
+<div>
+    <math>
+        <mrow>
+            <mi>A</mi>
+            <mo>=</mo>
+            {matrix_str}
+        </mrow>
+    </math>
+</div>
 <div>Find the eigenvalues and eigenvectors.</div>
 <div>In the context of differential equations, find the general solution of the linear planar system.</div>
 <div>

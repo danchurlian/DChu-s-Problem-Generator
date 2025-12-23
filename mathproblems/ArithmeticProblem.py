@@ -14,13 +14,16 @@ def _new_problem(prob_num: int) -> str:
         ran1 = ran1 * ran2
 
     return f"""
+<div>
 {prob_num}) 
-<math>
-    <mn>{ran1}</mn>
-    <mo>{chosen_op}</mo>
-    <mn>{ran2}</mn> 
-    <mo>=</mo>
-</math></br>"""
+    <math>
+        <mn>{ran1}</mn>
+        <mo>{chosen_op}</mo>
+        <mn>{ran2}</mn> 
+        <mo>=</mo>
+    </math>
+</div>
+"""
 
 class ArithmeticProblem(object):
     def __init__(self, num_probs: int):

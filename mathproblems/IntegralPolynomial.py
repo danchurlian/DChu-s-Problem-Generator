@@ -11,14 +11,14 @@ class IntegralPolynomial(object):
         return f"""
 <div>Evaluate the integral below.</div>
 <div>Make sure to add + C!</div>
-
-<math>
-    <mo>&int;</mo>
-    <mo>(</mo>
-        {expression}
-    <mo>)</mo>
-    <mi>d</mi>
-    <mi>x</mi>
-</math>
-
+<div>
+    <math>
+        <mo>&int;</mo>
+        <mo>(</mo>
+            {expression}
+        <mo>)</mo>
+        <mi>d</mi>
+        <mi>x</mi>
+    </math>
+</div>
 """
