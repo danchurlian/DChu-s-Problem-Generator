@@ -16,24 +16,24 @@ class ProblemFactory(object):
         if (problem_type in ["bst", "bstdraw", "bstproblem"]):
             return BSTProblem()
 
-        elif (problem_type in ["diffsys", "planarsys", "psys"]):
-            return LinearPlanarSystemProblem()
+        # elif (problem_type in ["diffsys", "planarsys", "psys"]):
+        #     return LinearPlanarSystemProblem()
         
-        elif (problem_type == "matsys"):
-            errormsg = "MatsysError: "
-            if (args and len(args) == 1):
-                try:
-                    dimension = int(args[0])
-                    print(dimension)
-                    if (1 <= dimension and dimension <= 5):
-                        return MatrixLinearSystemProblem(dimension)
-                    else:
-                        errormsg += "Argument must be between 1 and 5 inclusive"
-                except ValueError:
-                    errormsg += "Argument must be an integer greater than 0"
-                    pass
-            else:
-                errormsg += "Missing integer argument between 1 and 5 inclusive"
+        # elif (problem_type == "matsys"):
+        #     errormsg = "MatsysError: "
+        #     if (args and len(args) == 1):
+        #         try:
+        #             dimension = int(args[0])
+        #             print(dimension)
+        #             if (1 <= dimension and dimension <= 5):
+        #                 return MatrixLinearSystemProblem(dimension)
+        #             else:
+        #                 errormsg += "Argument must be between 1 and 5 inclusive"
+        #         except ValueError:
+        #             errormsg += "Argument must be an integer greater than 0"
+        #             pass
+        #     else:
+        #         errormsg += "Missing integer argument between 1 and 5 inclusive"
 
         # elif (problem_type in ["arith", "arithmetic"]):
         #     errormsg = "ArthmeticError: "
