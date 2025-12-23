@@ -1,5 +1,5 @@
 # DChu's Problem Generator
-This is a personal project where the user can input a command and be given basic computer science / math problems to solve on paper. I built this originally to help me practice and study course material over the fall semester.  
+This is a Flask web application where the user can input a command and be given basic computer science / math problems to solve on paper. I built this as a personal project originally to help me practice and study course material over the fall semester.  
 There is a help section that lists the syntax for the commands and arguments. 
 
 ## Current list of problems
@@ -12,6 +12,8 @@ There is a help section that lists the syntax for the commands and arguments.
 | Array Sorting Problem | Generates a array of random numbers, and asks the user to trace sorting algorithms on paper. |
 | 2x2 Linear Planar System Problem | Generates a 2x2 matrix, and asks the user to find the eigenvalues and eigenvectors of it, and in the context of differential equations, write the general solution to the linear planar system. |
 | Number Conversion Problem | Three cases: (1) Generates a list of five 8-bit binary numbers and prompts the user to write down those numbers in decimal form. (2) Generates a list of five unsigned decimal integers (0-255) and prompts the user to write down those numbers in binary form. (3) Generates a list of five hexadecimal integers (00-ff) and prompts the user to write down those numbers in decimal form. |  
+| Derivative and Integral Problems | Generates a polynomial that the user  can use to take the derivative or integrate. | 
+| Root Expansion Problem | Generates a certain number of binomials and prompts the user to expand them out. | 
 
 ## Development process
 I started out working with the Flask framework in order to carry out this web application. I set up the `app.py` and `index.html` files as I slowly learned how Flask functions and decorators work. The html file started out very simple. I learned about `meta` tags in the head portion of file, and I put a simple form that contained a field of text and a submit button.  
@@ -22,12 +24,14 @@ Once I was able to get the form up and running, I began working on generating so
 
 I first made the `BSTProblem` class that extends as a child from the `Problem` class, which was the easiest to implement at the time. I simply made it generate an array of random numbers that don't repeat themselves and tell the user to draw it on paper. Then I wrote the `MatrixLinearSystemProblem` and `HeapProblem` classes later on. The `MatrixLinearSystemProblem` class gave a bit of trouble because I wanted to display the matrices as square and as fixed of a shape as possible; I had to learn about number formatting in Python in order to make this work.
 
-Then came the `ArithmeticProblem`, `ArraySortingProblem` and `LinearPlanarSystemProblem` classes. The planar system one also took me a long time to figure out how to implement it because it required generating a matrix from just eigenvalues and eigenvectors, but *also* making sure the final result contained just integers. I worked around this mathematically by using some form of diagonalization from linear algebra, though I haven't taken a class on that subject and instead am taking differential equations. This was when I started using the `numpy` library for the first time, as I used it for implementing matrix multiplication and inverting matrices.
+Then came the `ArithmeticProblem`, `ArraySortingProblem` and `LinearPlanarSystemProblem` classes. The planar system one also took me a long time to figure out how to implement it because it required generating a matrix from just eigenvalues and eigenvectors, but *also* making sure the final result contained just integers. I worked around this mathematically by using some form of diagonalization from linear algebra, though I haven't taken a class on that subject and instead am taking differential equations. This was when I started using the `numpy` library for the first time, as I used it for implementing matrix multiplication and inverting matrices.  
+
+The latest changes I've made was creating a new apge for math-specific problems. This was used as a way for me to learn how math is embedded in HTML. I used MathML to display problems such as the Root Expansion, Derivative, and Integral problems. Then I moved a few problems from the old page to this new page. Learning MathML helped me understand the similarities between HTML and MathML as markup languages.
 
 For styling, I took great interest in learning how to use raw `css`, especially through learning about style selectors and which styling rules take priortiy. I also learned more about margins vs. padding, as well as learning about block vs. inline layouts.
 
 ## Installation
-This codebase is written in Python 3.12.3.  
+This codebase is written in Python 3.12.3 using the Flask framework.  
 The following commands are from a Linux Ubuntu context. For anyone interesting in giving this a try, clone the repository and activate the virtual environment using the command:
 ```
 source .venv/bin/activate
