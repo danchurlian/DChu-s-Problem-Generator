@@ -13,8 +13,9 @@ def _forcing_mathml():
     if (real_component != 0):
         exponent_term_mathml: str = "<mi>t</mi>"
         if (abs(real_component) != 1):
-            exponent_term_mathml = f"<mn>{real_component}</mn><mo>&InvisibleTimes;</mo>{exponent_term_mathml}"
-
+            exponent_term_mathml = f"<mn>{abs(real_component)}</mn><mo>&InvisibleTimes;</mo>{exponent_term_mathml}"
+        if (real_component < 0):
+            exponent_term_mathml = f"<mo>-</mo>{exponent_term_mathml}"
         exponential_mathml = f"<msup><mi>e</mi><mrow>{exponent_term_mathml}</mrow></msup>"
 
     imaginary_mathml: str = ""
