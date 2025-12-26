@@ -4,6 +4,7 @@ from .RootExpansion import RootExpansion
 from .ArithmeticProblem import ArithmeticProblem
 from .MatrixLinearSystem import MatrixLinearSystem
 from .LinearPlanarSystem import LinearPlanarSystem
+from .DiffEqSecondOrder import DiffEqSecondOrder
 
 class MathProblemFactory(object):
     def create_problem_output(command: str, args: list[str]) -> str:
@@ -64,6 +65,9 @@ class MathProblemFactory(object):
                 output = problem.get_mathml()
             except Exception:
                 output = "There must be exactly one argument that is an integer between 1 and 5!"
+        elif (command in ["diffeq"]):
+            problem = DiffEqSecondOrder()
+            output = problem.get_mathml()
 
         return output
         
