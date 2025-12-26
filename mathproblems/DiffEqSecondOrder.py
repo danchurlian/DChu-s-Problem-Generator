@@ -15,7 +15,6 @@ def _term_mathml(coef: int, order: int):
     if (coef != 0):
         if (coef < 0):
             result = "<mo>-</mo>"
-    
         elif (coef > 0):
             result = "<mo>+</mo>" 
         result += f"<mrow><mn>{abs(coef)}</mn><mo>&InvisibleTimes;</mo>{_y_mathml(order)}</mrow>" 
@@ -61,4 +60,7 @@ class DiffEqSecondOrder(object):
         pass
 
     def get_mathml(self):
-        return _random_quadratic()
+        return f"""
+<div>Provide the general solution to the second order constant coefficient homoegeous linear differential equation below:</div>
+{_random_quadratic()}
+"""
