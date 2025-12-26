@@ -30,6 +30,8 @@ def _random_quadratic():
     # 2 random roots
     r1: int = int(random.random() * 11 - 5)
     r2: int = int(random.random() * 11 - 5)
+    if (r1 == 0 and r2 == 0):
+        return _random_quadratic()
     
     # r,t = sp.symbols("r t")
     # y = sp.Function("y")
@@ -65,5 +67,7 @@ class DiffEqSecondOrder(object):
     def get_mathml(self):
         return f"""
 <div>Provide the general solution to the second order constant coefficient homoegeous linear differential equation below:</div>
-{_random_quadratic()}
+<div>
+    {_random_quadratic()}
+</div>
 """
