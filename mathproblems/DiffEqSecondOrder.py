@@ -12,8 +12,8 @@ def _forcing_mathml():
     exponential_mathml: str = ""
     if (real_component != 0):
         exponent_term_mathml: str = "<mi>t</mi>"
-        if (real_component != 1):
-            exponential_mathml = f"<mn>{real_component}</mn><mo>&InvisibleTimes;</mo>{exponent_term_mathml}"
+        if (abs(real_component) != 1):
+            exponent_term_mathml = f"<mn>{real_component}</mn><mo>&InvisibleTimes;</mo>{exponent_term_mathml}"
 
         exponential_mathml = f"<msup><mi>e</mi><mrow>{exponent_term_mathml}</mrow></msup>"
 
@@ -62,12 +62,12 @@ def _term_mathml(coef: int, order: int):
     return result
 
 # TODO: extract coefficients from the characteristic equation and construct the mathml that way
-def _random_quadratic():
+def _new_diffeq():
     # 2 random roots
     r1: int = int(random.random() * 11 - 5)
     r2: int = int(random.random() * 11 - 5)
     if (r1 == 0 and r2 == 0):
-        return _random_quadratic()
+        return _new_diffeq()
 
     forcing: str = _forcing_mathml() 
     # r,t = sp.symbols("r t")
@@ -105,6 +105,6 @@ class DiffEqSecondOrder(object):
         return f"""
 <div>Provide the general solution to the second order constant coefficient  linear differential equation below:</div>
 <div>
-    {_random_quadratic()}
+    {_new_diffeq()}
 </div>
 """
