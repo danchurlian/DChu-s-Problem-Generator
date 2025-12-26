@@ -1,5 +1,43 @@
 import random
 
+def _forcing_mathml():
+    real_component: int = int(random.random() * 11 - 5)
+    imaginary_component: int = int(random.random() * 5)
+    if (real_component == 0 and imaginary_component == 0):
+        return _forcing_mathml()
+
+    coef: int = 1
+    coef_mathml: str = ""
+
+    exponential_mathml: str = ""
+    if (real_component != 0):
+        exponent_term_mathml: str = "<mi>t</mi>"
+        if (real_component != 1):
+            exponential_mathml = f"<mn>{real_component}</mn><mo>&InvisibleTimes;</mo>{exponent_term_mathml}"
+
+        exponential_mathml = f"<msup><mi>e</mi><mrow>{exponent_term_mathml}</mrow></msup>"
+
+    imaginary_mathml: str = ""
+    if (imaginary_component != 0):
+        imaginary_mathml = f"<mo>&InvisibleTimes;</mo>"
+
+        # handling the coefficient edge case
+        imaginary_term_mathml: str = "<mi>t</mi>"
+        if (imaginary_component != 1):
+            imaginary_term_mathml = f"<mn>{imaginary_component}</mn><mo>&InvisibleTimes;</mo>{imaginary_term_mathml}"
+
+        inside_mathml: str = f"<mo>(</mo>{imaginary_term_mathml}<mo>)</mo>"
+
+        choice: int = int(random.random() * 2) 
+        if (choice == 0):
+            imaginary_mathml += f"<mi>cos</mi><mrow>{inside_mathml}</mrow>"
+            pass #cos
+        else:
+            imaginary_mathml += f"<mi>sin</mi><mrow>{inside_mathml}</mrow>"
+            pass #sin
+
+    return f"<mrow>{coef_mathml}{exponential_mathml}{imaginary_mathml}</mrow"
+
 def _y_mathml(order: int):
     y_mathml: str = ""
     if (order == 2):
@@ -21,8 +59,6 @@ def _term_mathml(coef: int, order: int):
         if (abs(coef) != 1):
             result += f"<mrow><mn>{abs(coef)}</mn><mo>&InvisibleTimes;</mo>"
         result += f"{_y_mathml(order)}</mrow>" 
-
-
     return result
 
 # TODO: extract coefficients from the characteristic equation and construct the mathml that way
@@ -32,7 +68,8 @@ def _random_quadratic():
     r2: int = int(random.random() * 11 - 5)
     if (r1 == 0 and r2 == 0):
         return _random_quadratic()
-    
+
+    forcing: str = _forcing_mathml() 
     # r,t = sp.symbols("r t")
     # y = sp.Function("y")
     # if (r1 == 0 or r2 == 0):
@@ -55,7 +92,7 @@ def _random_quadratic():
         {_term_mathml(-r1 - r2, 1)}
         {_term_mathml(r1 * r2, 0)}
         <mo>=</mo>
-        <mn>0</mn>
+        <mrow>{forcing}</mrow>
     </mrow>
 </math>
 """
@@ -66,7 +103,7 @@ class DiffEqSecondOrder(object):
 
     def get_mathml(self):
         return f"""
-<div>Provide the general solution to the second order constant coefficient homoegeous linear differential equation below:</div>
+<div>Provide the general solution to the second order constant coefficient  linear differential equation below:</div>
 <div>
     {_random_quadratic()}
 </div>
