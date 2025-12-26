@@ -17,7 +17,10 @@ def _term_mathml(coef: int, order: int):
             result = "<mo>-</mo>"
         elif (coef > 0):
             result = "<mo>+</mo>" 
-        result += f"<mrow><mn>{abs(coef)}</mn><mo>&InvisibleTimes;</mo>{_y_mathml(order)}</mrow>" 
+        
+        if (abs(coef) != 1):
+            result += f"<mrow><mn>{abs(coef)}</mn><mo>&InvisibleTimes;</mo>"
+        result += f"{_y_mathml(order)}</mrow>" 
 
 
     return result
