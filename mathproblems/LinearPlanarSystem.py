@@ -15,6 +15,13 @@ def _p_random():
     
     return a,b,c,d
 
+def _count_nums_above_9(matrix) -> int:
+    count: int = 0 
+    for x in np.nditer(matrix):
+        if (abs(x) > 9):
+            count += 1
+    return count;
+
 def _get_matrix():
     success: bool = True
 
@@ -27,13 +34,15 @@ def _get_matrix():
     diag = np.array([[e_value_1, 0], [0, e_value_2]], np.int32)
     p = np.array([[a, c], [d, b]], np.int32)
     
-    result = None
-
     # Try calculating using numpy, if not successful, try again
+    result = None
     try:
         result = np.astype(p @ diag @ np.linalg.inv(p), np.int32)
     except np.linalg.LinAlgError:
         success = False
+    if (_count_nums_above_9(result) > 0):
+        success = False
+
     if (not success):
         result = _get_matrix()
 
