@@ -35,9 +35,9 @@ def _get_matrix():
     if (not success):
         result = _get_matrix()
 
-    print(f"P matrix is {p}")
-    print(f"Diagonal matrix is {diag}")
-    print(f"Result is {result}")
+    # print(f"P matrix is {p}")
+    # print(f"Diagonal matrix is {diag}")
+    # print(f"Result is {result}")
     return result
 
 class LinearPlanarSystem(object):

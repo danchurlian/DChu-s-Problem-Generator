@@ -41,7 +41,6 @@ def help_section():
 """
     
     html_inst = markdown.markdown(raw_str, extensions=['tables'])
-    print(html_inst)
     return html_inst
 
 def math_help_section() -> str:
