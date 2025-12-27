@@ -3,15 +3,14 @@ import numpy as np
 
 def _p_random():
     D = 1 # set determinant
-    a = int((random.random() * 4 + 1) * math.pow(-1, int(random.random() * 2)))
-    c = int(random.random() * 4 + 1)
-    d = int(random.random() * 4 + 1)
+    a = int((random.random() * 3 + 1) * math.pow(-1, int(random.random() * 2)))
+    c = int(random.random() * 3)
+    d = int(random.random() * 3)
     numerator = (D + c*d)
     while (a != 1 and a != -1 and numerator % a != 0):
-        c = int(random.random() * 4 + 1)
-        d = int(random.random() * 4 + 1)
+        c = int(random.random() * 3)
+        d = int(random.random() * 3)
         numerator = (D + c*d)
-        print(numerator, numerator % a)
     b = int((numerator) / a)
     
     return a,b,c,d
@@ -23,11 +22,14 @@ def _get_matrix():
     e_value_1: int = int((random.random() * 4 + 1) * math.pow(-1, int(random.random() * 2)))
     e_value_2: int = int((random.random() * 4 + 1) * math.pow(-1, int(random.random() * 2)))
 
+    # Setup the P and D matrices
     a,b,c,d = _p_random()
     diag = np.array([[e_value_1, 0], [0, e_value_2]], np.int32)
     p = np.array([[a, c], [d, b]], np.int32)
     
     result = None
+
+    # Try calculating using numpy, if not successful, try again
     try:
         result = np.astype(p @ diag @ np.linalg.inv(p), np.int32)
     except np.linalg.LinAlgError:
@@ -35,9 +37,6 @@ def _get_matrix():
     if (not success):
         result = _get_matrix()
 
-    # print(f"P matrix is {p}")
-    # print(f"Diagonal matrix is {diag}")
-    # print(f"Result is {result}")
     return result
 
 class LinearPlanarSystem(object):
