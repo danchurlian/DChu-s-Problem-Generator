@@ -14,7 +14,8 @@ There is a help section that lists the syntax for the commands and arguments.
 | Number Conversion Problem | Three cases: (1) Generates a list of five 8-bit binary numbers and prompts the user to write down those numbers in decimal form. (2) Generates a list of five unsigned decimal integers (0-255) and prompts the user to write down those numbers in binary form. (3) Generates a list of five hexadecimal integers (00-ff) and prompts the user to write down those numbers in decimal form. |  
 | Derivative and Integral Problems | Generates a polynomial that the user can use to take the derivative or integrate. | 
 | Root Expansion Problem | Generates a certain number of binomials and prompts the user to expand them out. | 
-| Differential Equation Problem | Generates second order constant coefficient linear differential equation. |  
+| Autonomous Differential Equation Problem | Generates a first order autonomous differential equation. |  
+| Differential Equation Problem 2 | Generates second order constant coefficient linear differential equation. |  
 
 ## Development process
 I started out working with the Flask framework in order to carry out this web application. I set up the `app.py` and `index.html` files as I slowly learned how Flask functions and decorators work. The html file started out very simple. I learned about `meta` tags in the head portion of file, and I put a simple form that contained a field of text and a submit button.  
