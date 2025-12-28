@@ -65,7 +65,7 @@ class MathProblemFactory(object):
                 output = problem.get_mathml()
             except Exception:
                 output = "There must be exactly one argument that is an integer between 1 and 5!"
-        elif (command in ["diffeq"]):
+        elif (command in ["ode2"]):
             problem = DiffEqSecondOrder()
             output = problem.get_mathml()
 
