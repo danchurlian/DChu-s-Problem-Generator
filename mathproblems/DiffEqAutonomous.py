@@ -1,14 +1,19 @@
 import random
 
+# Generates a binomial with a random root between -5 and 5
 def _random_binomial_mathml():
     root: int = int(random.random() * 11 - 5)
+    root_mathml: str = ""
+    if (root > 0):
+        root_mathml = f"<mo>+</mo><mn>{root}</mn>"
+    elif (root < 0):
+        root_mathml = f"<mo>-</mo><mn>{abs(root)}</mn>"
     
     return f"""
 <mrow>
     <mo>(</mo>
     <mi>y</mi>
-    <mo>+</mo>
-    <mn>{root}</mn>
+    {root_mathml}
     <mo>)</mo>
 </mrow>
 """
