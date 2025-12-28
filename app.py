@@ -1,7 +1,5 @@
 from problems.ProblemFactory import ProblemFactory
 from mathproblems.MathProblemFactory import MathProblemFactory
-from mathproblems.RootExpansion import RootExpansion
-from mathproblems.DerivativePolynomial import DerivativePolynomial
 
 from flask import Flask, render_template, request
 import markdown
@@ -53,6 +51,7 @@ def math_help_section() -> str:
 |`int n` | Generate a polynomial of degree n and evaluate the integral of it. 1 <= n <= 5 |
 |`matsys n` | Generate an augmented matrix that represents a linear system of n variables. 2 <= n <= 5 |
 |`psys` | Generate a 2x2 matrix and find its eigenvalues and eigenvectors. Then interpret the matrix in the context of differential equations. |
+|`odeauto` | Generate a first order autonomous differential equation and analyze the equation's behavior. |
 |`ode2` | Generate a second order constant coefficient differential equation. |
 """
     html_inst = markdown.markdown(raw_str, extensions=['tables'])

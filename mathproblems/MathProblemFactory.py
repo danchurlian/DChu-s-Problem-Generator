@@ -5,6 +5,7 @@ from .ArithmeticProblem import ArithmeticProblem
 from .MatrixLinearSystem import MatrixLinearSystem
 from .LinearPlanarSystem import LinearPlanarSystem
 from .DiffEqSecondOrder import DiffEqSecondOrder
+from .DiffEqAutonomous import DiffEqAutonomous
 
 class MathProblemFactory(object):
     def create_problem_output(command: str, args: list[str]) -> str:
@@ -65,6 +66,9 @@ class MathProblemFactory(object):
                 output = problem.get_mathml()
             except Exception:
                 output = "There must be exactly one argument that is an integer between 1 and 5!"
+        elif (command in ["odeauto"]):
+            problem = DiffEqAutonomous()
+            output = problem.get_mathml()
         elif (command in ["ode2"]):
             problem = DiffEqSecondOrder()
             output = problem.get_mathml()
