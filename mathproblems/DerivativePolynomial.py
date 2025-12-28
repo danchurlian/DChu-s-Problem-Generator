@@ -1,10 +1,11 @@
 from .Utils import Utils
+from .MathProblem import MathProblem
 import random
 
-class DerivativePolynomial(object):
+class DerivativePolynomial(MathProblem):
     def __init__(self, degree: int):
+        super().__init__()
         self.degree = degree
-        pass
 
     def get_mathml(self):
         expression: str = Utils.polynomial(self.degree)

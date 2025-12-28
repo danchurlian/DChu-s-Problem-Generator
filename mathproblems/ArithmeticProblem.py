@@ -1,3 +1,4 @@
+from .MathProblem import MathProblem
 import random,math
 
 # MathML string
@@ -25,8 +26,9 @@ def _new_problem(prob_num: int) -> str:
 </div>
 """
 
-class ArithmeticProblem(object):
+class ArithmeticProblem(MathProblem):
     def __init__(self, num_probs: int):
+        super().__init__()
         self.num_probs = num_probs
 
     def get_mathml(self):

@@ -1,3 +1,4 @@
+from .MathProblem import MathProblem
 import random
 
 def _new_binomial():
@@ -12,15 +13,16 @@ def _new_binomial():
 <mo>(</mo><mi>x</mi> {second_part}<mo>)</mo>
 """
 
-
-class RootExpansion(object):
+class RootExpansion(MathProblem):
     def __init__(self, num_roots: int):
+        super().__init__()
         self.num_roots = num_roots
 
     def get_mathml(self):
         expression: str = ""
         for i in range(self.num_roots):
             expression += _new_binomial()
+
         return f"""
 <div>Please algebraically expand the following:</div>
 <div>

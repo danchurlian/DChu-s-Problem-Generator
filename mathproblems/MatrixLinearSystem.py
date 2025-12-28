@@ -1,7 +1,9 @@
+from .MathProblem import MathProblem
 import random, math
 
-class MatrixLinearSystem(object):
+class MatrixLinearSystem(MathProblem):
     def __init__(self, dimension:int = 3):
+        super().__init__()
         self.dimension = dimension
         self.sols = self._generate_solution()
 

@@ -1,3 +1,4 @@
+from .MathProblem import MathProblem
 import random
 
 def _forcing_mathml():
@@ -98,9 +99,9 @@ def _new_diffeq():
 </math>
 """
 
-class DiffEqSecondOrder(object):
+class DiffEqSecondOrder(MathProblem):
     def __init__(self): 
-        pass
+        super().__init__()
 
     def get_mathml(self):
         return f"""

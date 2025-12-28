@@ -1,3 +1,4 @@
+from .MathProblem import MathProblem
 import random, math
 import numpy as np
 
@@ -50,7 +51,7 @@ def _get_matrix():
 
 class LinearPlanarSystem(object):
     def __init__(self):
-        pass
+        super().__init__()
 
     def get_mathml(self):
         matrix = _get_matrix()

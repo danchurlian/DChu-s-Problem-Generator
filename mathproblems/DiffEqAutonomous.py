@@ -1,4 +1,5 @@
-import random
+from .MathProblem import MathProblem
+import random 
 
 # Generates a binomial with a random root between -5 and 5
 def _random_binomial_mathml():
@@ -18,8 +19,9 @@ def _random_binomial_mathml():
 </mrow>
 """
     
-class DiffEqAutonomous(object):
+class DiffEqAutonomous(MathProblem):
     def __init__(self):
+        super().__init__()
         pass
 
     def get_mathml(self):

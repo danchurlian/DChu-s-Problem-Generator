@@ -1,9 +1,10 @@
 from .Utils import Utils
+from .MathProblem import MathProblem
 
-class IntegralPolynomial(object):
+class IntegralPolynomial(MathProblem):
     def __init__(self, degree: int):
+        super().__init__()
         self.degree = degree
-        pass
 
     def get_mathml(self) -> str:
         expression: str = Utils.polynomial(self.degree)
