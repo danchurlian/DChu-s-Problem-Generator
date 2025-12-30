@@ -52,7 +52,7 @@ def math_help_section() -> str:
 |`int n` | Generate a polynomial of degree n and evaluate the integral of it. 1 <= n <= 5 |
 |`matsys n` | Generate an augmented matrix that represents a linear system of n variables. 2 <= n <= 5 |
 |`psys` | Generate a 2x2 matrix and find its eigenvalues and eigenvectors. Then interpret the matrix in the context of differential equations. |
-|`odeauto` | Generate a first order autonomous differential equation and analyze the equation's behavior. |
+|`odeauto n` | Generate a first order autonomous differential equation with n stationary points and analyze the equation's behavior. 1 <= n <= 4 |
 |`ode2` | Generate a second order constant coefficient differential equation. |
 """
     html_inst = markdown.markdown(raw_str, extensions=['tables'])
