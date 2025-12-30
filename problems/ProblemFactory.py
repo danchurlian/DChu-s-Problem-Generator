@@ -77,13 +77,14 @@ class ProblemFactory(object):
                 return NumberConversionProblem(args[0])
 
         elif (problem_type in ["arrgen"]):
-            if (args != None and len(args) == 3):
+            if (args != None and len(args) == 3 or len(args) == 4):
                 try:
                     num_elts: int = int(args[0])
                     low: int = int(args[1])
                     high: int = int(args[2])
-                    return ArrayGenerator(num_elts, low, high)
-                except ValueError as ve:
-                    errormsg = ve 
+                    allow_dupliates: bool = len(args) == 3 or args[3] != "false"
+                    return ArrayGenerator(num_elts, low, high, allow_dupliates)
+                except Exception as e:
+                    errormsg = "Something went wrong" 
         
         return Problem(errormsg)
