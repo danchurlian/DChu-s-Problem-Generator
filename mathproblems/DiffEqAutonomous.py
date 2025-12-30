@@ -20,14 +20,14 @@ def _random_binomial_mathml():
 """
     
 class DiffEqAutonomous(MathProblem):
-    def __init__(self):
+    def __init__(self, num_stationary_points: int = 2):
+        self.num_stationary_points = num_stationary_points
         super().__init__()
-        pass
 
     def get_mathml(self):
         # Create a chain of binomials on the right-hand side of the ODE
         root_chain_mathml = ""
-        for i in range(3):
+        for i in range(self.num_stationary_points):
             root_chain_mathml += _random_binomial_mathml()
         # Return the whole mathml string, which includes the left hand side dydt 
         return f"""

@@ -66,9 +66,20 @@ class MathProblemFactory(object):
                 output = problem.get_mathml()
             except Exception:
                 output = "There must be exactly one argument that is an integer between 1 and 5!"
+
         elif (command in ["odeauto"]):
-            problem = DiffEqAutonomous()
-            output = problem.get_mathml()
+            num_stationary_points: int = 2
+            try:
+                if (len(args) == 1):
+                    num_stationary_points: int = int(args[0])
+                if (0 < num_stationary_points and num_stationary_points <= 4):
+                    problem = DiffEqAutonomous(num_stationary_points)
+                    output = problem.get_mathml()
+                else:
+                    raise ValueError()
+            except Exception as e:
+                output = "Argument must be a number between 1 and 4 inclusive!"
+                
         elif (command in ["ode2"]):
             problem = DiffEqSecondOrder()
             output = problem.get_mathml()
