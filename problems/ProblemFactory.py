@@ -6,6 +6,7 @@ from .HeapProblem import HeapProblem
 from .ArithmeticProblem import ArithmeticProblem
 from .ArraySortingProblem import ArraySortingProblem
 from .NumberConversionProblem import NumberConversionProblem
+from .ArrayGenerator import ArrayGenerator
 
 class ProblemFactory(object):
     def __init__(self):
@@ -74,5 +75,15 @@ class ProblemFactory(object):
                 return NumberConversionProblem(None)
             else:
                 return NumberConversionProblem(args[0])
+
+        elif (problem_type in ["arrgen"]):
+            if (args != None and len(args) == 3):
+                try:
+                    num_elts: int = int(args[0])
+                    low: int = int(args[1])
+                    high: int = int(args[2])
+                    return ArrayGenerator(num_elts, low, high)
+                except ValueError as ve:
+                    errormsg = ve 
         
         return Problem(errormsg)
