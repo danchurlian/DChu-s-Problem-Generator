@@ -49,7 +49,8 @@ def math_help_section() -> str:
 |`arith n` | Generate n numbers of basic arithmetic problems. 1 <= n <= 8 | 
 |`expand n` | Expand n binomials algebraically. 2 <= n <= 5 | 
 |`derive n` | Generate a polynomial of degree n and take the derivative of it. 1 <= n <= 5 |
-|`int n` | Generate a polynomial of degree n and evaluate the integral of it. 1 <= n <= 5 |
+|`int poly n` | Generate a polynomial of degree n and evaluate the integral of it. 1 <= n <= 5 |
+|`int [arctan | invtan]` | Generate an integral that involves arctan as the final answer. | 
 |`matsys n` | Generate an augmented matrix that represents a linear system of n variables. 2 <= n <= 5 |
 |`psys` | Generate a 2x2 matrix and find its eigenvalues and eigenvectors. Then interpret the matrix in the context of differential equations. |
 |`odeauto n` | Generate a first order autonomous differential equation with n stationary points and analyze the equation's behavior. 1 <= n <= 4 |

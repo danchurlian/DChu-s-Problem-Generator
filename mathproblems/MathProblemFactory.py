@@ -1,5 +1,6 @@
 from .DerivativePolynomial import DerivativePolynomial
 from .IntegralPolynomial import IntegralPolynomial
+from .IntegralArctan import IntegralArctan
 from .RootExpansion import RootExpansion
 from .ArithmeticProblem import ArithmeticProblem
 from .MatrixLinearSystem import MatrixLinearSystem
@@ -58,14 +59,22 @@ class MathProblemFactory(object):
                 output = "There must be exactly one argument that is an integer between 1 and 5!"
         
         elif (command in ["int"]):
-            try:
-                degree: int = int(args[0])
-                if (degree < 1 or degree > 5):
-                    raise ValueError()
-                problem = IntegralPolynomial(degree)
-                output = problem.get_mathml()
-            except Exception:
-                output = "There must be exactly one argument that is an integer between 1 and 5!"
+            if len(args) > 0:
+                integralType: str = args[0]
+                if (integralType == "poly"):
+                    try:
+                        degree: int = int(args[1])
+                        if (degree < 1 or degree > 5):
+                            raise ValueError()
+                        problem = IntegralPolynomial(degree)
+                        output = problem.get_mathml()
+                    except Exception:
+                        output = "Integral Polynomial syntax error: There must be exactly one argument that is an integer between 1 and 5!"
+                elif (integralType in ["arctan", "invtan"] ):
+                    problem = IntegralArctan()
+                    output = problem.get_mathml()
+            else:
+                output = "Integral no arguments!"
 
         elif (command in ["odeauto"]):
             num_stationary_points: int = 2
