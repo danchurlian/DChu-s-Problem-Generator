@@ -1,6 +1,7 @@
 from .DerivativePolynomial import DerivativePolynomial
 from .IntegralPolynomial import IntegralPolynomial
 from .IntegralArctan import IntegralArctan
+from .IntegralArcsin import IntegralArcsin
 from .RootExpansion import RootExpansion
 from .ArithmeticProblem import ArithmeticProblem
 from .MatrixLinearSystem import MatrixLinearSystem
@@ -70,8 +71,11 @@ class MathProblemFactory(object):
                         output = problem.get_mathml()
                     except Exception:
                         output = "Integral Polynomial syntax error: There must be exactly one argument that is an integer between 1 and 5!"
-                elif (integralType in ["arctan", "invtan"] ):
+                elif (integralType in ["arctan", "invtan"]):
                     problem = IntegralArctan()
+                    output = problem.get_mathml()
+                elif (integralType in ["arcsin", "invsin"]):
+                    problem = IntegralArcsin()
                     output = problem.get_mathml()
             else:
                 output = "Integral no arguments!"
