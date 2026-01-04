@@ -9,21 +9,3 @@ class IntegralPolynomial(IntegralProblem):
     
     def _get_expression(self):
         return Utils.polynomial(self.degree)
-
-#     def get_mathml(self) -> str:
-#         expression: str = Utils.polynomial(self.degree)
-#         expression = inverseTangent()
-#         return f"""
-# <div>Evaluate the integral below.</div>
-# <div>Make sure to add + C!</div>
-# <div>
-#     <math>
-#         <mo>&int;</mo>
-#         <mo>(</mo>
-#             {expression}
-#         <mo>)</mo>
-#         <mi>d</mi>
-#         <mi>x</mi>
-#     </math>
-# </div>
-# """
