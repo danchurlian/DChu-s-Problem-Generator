@@ -5,6 +5,7 @@ from .IntegralArcsin import IntegralArcsin
 from .IntegralSincos import IntegralSincos
 from .IntegralSectan import IntegralSectan
 from .PSeries import PSeries
+from .SeriesDirectComparison import SeriesDirectComparison
 from .RootExpansion import RootExpansion
 from .ArithmeticProblem import ArithmeticProblem
 from .MatrixLinearSystem import MatrixLinearSystem
@@ -90,6 +91,9 @@ class MathProblemFactory(object):
                 output = "Integral no arguments!"
         elif (command == "pseries"):
             problem = PSeries()
+            output = problem.get_mathml()
+        elif (command == "dct"):
+            problem = SeriesDirectComparison()
             output = problem.get_mathml()
         elif (command in ["odeauto"]):
             num_stationary_points: int = 2

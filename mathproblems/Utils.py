@@ -1,6 +1,6 @@
 import random
 
-def polynomial_new_term(exponent: int, start: bool) -> str:
+def polynomial_new_term(exponent: int, var: str, start: bool = False) -> str:
     result: str = ""
     # coef should not be 0
     coef: int = int(random.random() * 13 - 6)
@@ -23,9 +23,9 @@ def polynomial_new_term(exponent: int, start: bool) -> str:
 
     exponential: str = ""
     if (exponent > 1):
-        exponential = f"<msup><mi>x</mi><mn>{exponent}</mn></msup>" 
+        exponential = f"<msup><mi>{var}</mi><mn>{exponent}</mn></msup>" 
     elif (exponent == 1):
-        exponential = f"<mi>x</mi>"
+        exponential = f"<mi>{var}</mi>"
     elif (abs(coef) == 1):
         exponential = f"<mn>1</mn>"
     result += exponential
@@ -33,10 +33,10 @@ def polynomial_new_term(exponent: int, start: bool) -> str:
     return result
 
 class Utils(object):
-    def polynomial(degree: int) -> str:
+    def polynomial(degree: int, var: str = "x") -> str:
         expression: str = ""
         for i in range(degree, -1, -1):
-            expression += polynomial_new_term(i, False) if i < degree else polynomial_new_term(i, True)
+            expression += polynomial_new_term(i, var, False) if i < degree else polynomial_new_term(i, var, True)
         return expression
 
     # Note this has only worked for inputs of trig functions  
