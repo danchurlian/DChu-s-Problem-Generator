@@ -2,6 +2,7 @@ from .DerivativePolynomial import DerivativePolynomial
 from .IntegralPolynomial import IntegralPolynomial
 from .IntegralArctan import IntegralArctan
 from .IntegralArcsin import IntegralArcsin
+from .IntegralSincos import IntegralSincos
 from .RootExpansion import RootExpansion
 from .ArithmeticProblem import ArithmeticProblem
 from .MatrixLinearSystem import MatrixLinearSystem
@@ -76,6 +77,9 @@ class MathProblemFactory(object):
                     output = problem.get_mathml()
                 elif (integralType in ["arcsin", "invsin"]):
                     problem = IntegralArcsin()
+                    output = problem.get_mathml()
+                elif (integralType in ["sincos"]):
+                    problem = IntegralSincos()
                     output = problem.get_mathml()
             else:
                 output = "Integral no arguments!"
