@@ -54,6 +54,7 @@ def math_help_section() -> str:
 |`int [arcsin | invsin]` | Generate an integral that involves arcsin/arccos as the final answer. | 
 |`int sincos` | Generate an integral that involves sine and cosine multiplied together. | 
 |`int sectan` | Generate an integral that involves secant and tangent multiplied together. | 
+|`pseries` | Generate a p-series convergence test. |
 |`matsys n` | Generate an augmented matrix that represents a linear system of n variables. 2 <= n <= 5 |
 |`psys` | Generate a 2x2 matrix and find its eigenvalues and eigenvectors. Then interpret the matrix in the context of differential equations. |
 |`odeauto n` | Generate a first order autonomous differential equation with n stationary points and analyze the equation's behavior. 1 <= n <= 4 |
