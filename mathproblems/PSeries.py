@@ -1,30 +1,16 @@
-from .MathProblem import MathProblem
+from .SeriesProblem import SeriesProblem
 from .Utils import Utils
 import random
 
-class PSeries(MathProblem):
+class PSeries(SeriesProblem):
     def __init__(self):
         super().__init__()
     
-    def get_mathml(self):
+    def _get_expression(self):
         deg: int = int(random.random() * 5 + 1)        
         return f"""
-<div>Does the following converge or diverge?</div>
-<math>
-    <mrow>
-        <munderover>
-            <mo>&sum;</mo>
-            <mrow>
-                <mi>n</mn>
-                <mo>=</mo>
-                <mn>1</mn>
-            </mrow>
-            <mo>∞</mo>
-        </munderover>
         <mfrac>
             <mn>1</mn>
             {Utils.raise_power("<mi>n</mi>", deg, "times")}
         </mfrac>
-    </mrow>
-</math>
 """
