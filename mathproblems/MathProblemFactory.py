@@ -7,6 +7,7 @@ from .IntegralSectan import IntegralSectan
 from .PartialFraction import PartialFraction
 from .PSeries import PSeries
 from .SeriesDirectComparison import SeriesDirectComparison
+from .SeriesRational import SeriesRational
 from .RootExpansion import RootExpansion
 from .ArithmeticProblem import ArithmeticProblem
 from .MatrixLinearSystem import MatrixLinearSystem
@@ -98,6 +99,9 @@ class MathProblemFactory(object):
             output = problem.get_mathml()
         elif (command == "dct"):
             problem = SeriesDirectComparison()
+            output = problem.get_mathml()
+        elif (command == "rationalseries"):
+            problem = SeriesRational()
             output = problem.get_mathml()
         elif (command in ["odeauto"]):
             num_stationary_points: int = 2

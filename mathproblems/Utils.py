@@ -34,9 +34,10 @@ def polynomial_new_term(exponent: int, var: str, start: bool = False) -> str:
 
 class Utils(object):
     def polynomial(degree: int, var: str = "x") -> str:
-        expression: str = ""
+        expression: str = "<mrow>"
         for i in range(degree, -1, -1):
             expression += polynomial_new_term(i, var, False) if i < degree else polynomial_new_term(i, var, True)
+        expression += "</mrow>"
         return expression
 
     # Note this has only worked for inputs of trig functions  
