@@ -4,6 +4,7 @@ from .IntegralArctan import IntegralArctan
 from .IntegralArcsin import IntegralArcsin
 from .IntegralSincos import IntegralSincos
 from .IntegralSectan import IntegralSectan
+from .PartialFraction import PartialFraction
 from .PSeries import PSeries
 from .SeriesDirectComparison import SeriesDirectComparison
 from .RootExpansion import RootExpansion
@@ -89,6 +90,9 @@ class MathProblemFactory(object):
                     output = problem.get_mathml()
             else:
                 output = "Integral no arguments!"
+        elif (command == "pfrac"):
+            problem = PartialFraction()
+            output = problem.get_mathml()
         elif (command == "pseries"):
             problem = PSeries()
             output = problem.get_mathml()
