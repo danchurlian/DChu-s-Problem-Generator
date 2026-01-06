@@ -54,6 +54,7 @@ def math_help_section() -> str:
 |`int [arcsin | invsin]` | Generate an integral that involves arcsin/arccos as the final answer. | 
 |`int sincos` | Generate an integral that involves sine and cosine multiplied together. | 
 |`int sectan` | Generate an integral that involves secant and tangent multiplied together. | 
+|`pfrac` | Generate a partial fractions problem. |
 |`pseries` | Generate a p-series convergence test. |
 |`dct` | Generate an infinite series that one can use either Direct Comparison or Limit Comparison tests. |
 |`matsys n` | Generate an augmented matrix that represents a linear system of n variables. 2 <= n <= 5 |
