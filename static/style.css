@@ -61,7 +61,7 @@ nav a {
     color: white;
 }
 
-#help-section {
+.help-section {
     background-color: rgb(243, 242, 248);
     width: 50%;
     font-family: Lato, sans-serif;
@@ -73,17 +73,17 @@ nav a {
     margin: 0.5em;
 }
 
-#help-section table {
+.help-section table {
     table-layout: fixed;
     border-collapse: collapse;
 }
 
-#help-section table th, td {
+.help-section table th, td {
     border: 3px solid rgb(78, 67, 90);
     padding: 5px;
 }
 
-#help-section code {
+.help-section code {
     background-color: rgb(104, 98, 82);
     color: white;
     padding-left: .25em;
@@ -92,8 +92,12 @@ nav a {
     border-radius: 2px;
 }
 
-#help-section li {
+.help-section li {
     margin-bottom: 0.5em;
+}
+
+#math-help-section {
+    width: 40%;
 }
 
 #command-form button {
@@ -129,12 +133,13 @@ nav a {
     font-size: 1rem;
 }
 
-
 #math-display {
-    /* float: right; */
+    float: right;
     display: block;
     width: 50vw;
-    /* height: auto; */
+}
+
+#math-display section {
     background-color: white;
     border-radius: 3px;
 
@@ -143,6 +148,10 @@ nav a {
     margin-right: 1em;
 }
 
-#math-display > * {
+#math-display section > * {
     padding: 0.5rem;
 }
+
+/* #math-display math {
+    margin-bottom: 0.5em;
+} */

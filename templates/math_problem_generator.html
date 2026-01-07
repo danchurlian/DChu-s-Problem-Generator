@@ -29,20 +29,22 @@
             <input type="text" name="command_line" class="courier-text"  placeholder="Enter a command..." required="true" autofocus="true" autocomplete="off" />
             <button type="submit" class="courier-text">Submit</button>
         </form>
+        <aside id="math-display">
+            <h2>Output:</h2>
+            <section>
+                {{ math_problem | safe }}            
+                <div> </div>
+            </section>
+        </aside>
 
         <h2>
             Commands:
         </h2>
 
-        <section id="help-section">
+        <section class="help-section" id="math-help-section">
             {{ math_help_section_markdown | safe }}
         </section>
 
-        <h2>Output:</h2>
-
-        <aside id="math-display">
-            {{ math_problem | safe }}            
-        </aside>
 
         {{ utils.footer() }}
     </body>
