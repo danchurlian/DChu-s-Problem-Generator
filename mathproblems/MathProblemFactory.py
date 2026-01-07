@@ -10,6 +10,7 @@ from .SeriesDirectComparison import SeriesDirectComparison
 from .SeriesRational import SeriesRational
 from .RootExpansion import RootExpansion
 from .ArithmeticProblem import ArithmeticProblem
+from .MatrixMultiply import MatrixMultiply
 from .MatrixLinearSystem import MatrixLinearSystem
 from .LinearPlanarSystem import LinearPlanarSystem
 from .DiffEqSecondOrder import DiffEqSecondOrder
@@ -28,6 +29,9 @@ class MathProblemFactory(object):
             except Exception:
                 output = "Argument must be a single integer between 1 and 8!"
 
+        elif (command in ["matmul"]):
+            problem = MatrixMultiply()
+            output = problem.get_mathml()
         elif (command in ["matsys"]):
             try:
                 dimension: int = int(args[0])

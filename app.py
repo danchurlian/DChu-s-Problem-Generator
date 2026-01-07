@@ -58,6 +58,7 @@ def math_help_section() -> str:
 |`pseries` | Generate a p-series convergence test. |
 |`dct` | Generate an infinite series that one can use either Direct Comparison or Limit Comparison tests. |
 |`rationalseries`| Generate an infinite series of a rational function. |
+|`matmul`| Generate two 2x2 matrices and perform matrix multiplication on them. |
 |`matsys n` | Generate an augmented matrix that represents a linear system of n variables. 2 <= n <= 5 |
 |`psys` | Generate a 2x2 matrix and find its eigenvalues and eigenvectors. Then interpret the matrix in the context of differential equations. |
 |`odeauto n` | Generate a first order autonomous differential equation with n stationary points and analyze the equation's behavior. 1 <= n <= 4 |
