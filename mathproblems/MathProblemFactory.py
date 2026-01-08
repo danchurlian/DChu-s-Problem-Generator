@@ -4,6 +4,7 @@ from .IntegralArctan import IntegralArctan
 from .IntegralArcsin import IntegralArcsin
 from .IntegralSincos import IntegralSincos
 from .IntegralSectan import IntegralSectan
+from .IntegralTrigSub import IntegralTrigSub
 from .PartialFraction import PartialFraction
 from .PSeries import PSeries
 from .SeriesDirectComparison import SeriesDirectComparison
@@ -92,6 +93,9 @@ class MathProblemFactory(object):
                     output = problem.get_mathml()
                 elif (integralType in ["sectan"]):
                     problem = IntegralSectan()
+                    output = problem.get_mathml()
+                elif (integralType == "trigsub"):
+                    problem = IntegralTrigSub()
                     output = problem.get_mathml()
             else:
                 output = "Integral no arguments!"
