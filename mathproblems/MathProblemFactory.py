@@ -98,7 +98,7 @@ class MathProblemFactory(object):
                     problem = IntegralTrigSub()
                     output = problem.get_mathml()
             else:
-                output = "Integral no arguments!"
+                output = "You must specify the type of integral to generate!  Ex: 'int sincos'"
         elif (command == "pfrac"):
             problem = PartialFraction()
             output = problem.get_mathml()
