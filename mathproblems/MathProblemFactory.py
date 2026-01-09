@@ -5,6 +5,7 @@ from .IntegralArcsin import IntegralArcsin
 from .IntegralSincos import IntegralSincos
 from .IntegralSectan import IntegralSectan
 from .IntegralTrigSub import IntegralTrigSub
+from .IntegralByParts1 import IntegralByParts1
 from .PartialFraction import PartialFraction
 from .PSeries import PSeries
 from .SeriesDirectComparison import SeriesDirectComparison
@@ -88,6 +89,8 @@ class MathProblemFactory(object):
                     problem = IntegralSectan()
                 elif (integralType == "trigsub"):
                     problem = IntegralTrigSub()
+                elif (integralType == "ibp1"):
+                    problem = IntegralByParts1()
             else:
                 output = "You must specify the type of integral to generate!  Ex: 'int sincos'"
         elif (command == "pfrac"):

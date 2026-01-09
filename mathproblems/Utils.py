@@ -1,42 +1,43 @@
 import random
 
-def polynomial_new_term(exponent: int, var: str, start: bool = False) -> str:
-    result: str = ""
-    # coef should not be 0
-    coef: int = int(random.random() * 13 - 6)
-    while (coef == 0):
-        coef = int(random.random() * 13 - 6)
-
-    if (abs(coef) == 1):
-        if (coef < 0):
-            result += f"<mo>-</mo>"
-        elif not start:
-            result += f"<mo>+</mo>"
-    else:
-        if (coef < 0):
-            result = f"<mo>-</mo><mn>{-coef}</mn>"
-        else:
-            if start:
-                result += f"<mn>{coef}</mn>" 
-            else:
-                result += f"<mo>+</mo><mn>{coef}</mn>"
-
-    exponential: str = ""
-    if (exponent > 1):
-        exponential = f"<msup><mi>{var}</mi><mn>{exponent}</mn></msup>" 
-    elif (exponent == 1):
-        exponential = f"<mi>{var}</mi>"
-    elif (abs(coef) == 1):
-        exponential = f"<mn>1</mn>"
-    result += exponential
-
-    return result
 
 class Utils(object):
+    def polynomial_new_term(exponent: int, var: str, start: bool = False) -> str:
+        result: str = ""
+        # coef should not be 0
+        coef: int = int(random.random() * 13 - 6)
+        while (coef == 0):
+            coef = int(random.random() * 13 - 6)
+
+        if (abs(coef) == 1):
+            if (coef < 0):
+                result += f"<mo>-</mo>"
+            elif not start:
+                result += f"<mo>+</mo>"
+        else:
+            if (coef < 0):
+                result = f"<mo>-</mo><mn>{-coef}</mn>"
+            else:
+                if start:
+                    result += f"<mn>{coef}</mn>" 
+                else:
+                    result += f"<mo>+</mo><mn>{coef}</mn>"
+
+        exponential: str = ""
+        if (exponent > 1):
+            exponential = f"<msup><mi>{var}</mi><mn>{exponent}</mn></msup>" 
+        elif (exponent == 1):
+            exponential = f"<mi>{var}</mi>"
+        elif (abs(coef) == 1):
+            exponential = f"<mn>1</mn>"
+        result += exponential
+
+        return result
+
     def polynomial(degree: int, var: str = "x") -> str:
         expression: str = "<mrow>"
         for i in range(degree, -1, -1):
-            expression += polynomial_new_term(i, var, False) if i < degree else polynomial_new_term(i, var, True)
+            expression += Utils.polynomial_new_term(i, var, False) if i < degree else Utils.polynomial_new_term(i, var, True)
         expression += "</mrow>"
         return expression
 
