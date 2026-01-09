@@ -83,6 +83,7 @@ class Utils(object):
         if (power != 0):
             result = f"""
 {Utils.raise_power(f"<mi>{trig_function}</mi>", power, "times")}
+<mo>&ApplyFunction;</mo>
 <mo>(</mo>
 {arg_expr}
 <mo>)</mo>
