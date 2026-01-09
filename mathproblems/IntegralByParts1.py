@@ -16,6 +16,7 @@ class IntegralByParts1(IntegralProblem):
 </msup>
 <mo>&InvisibleTimes;</mo>
 <mi>{random.choice(["sin", "cos"])}</mi>
+<mo>&ApplyFunction;</mo>
 <mo>(</mo>
 <mrow>
     {Utils.polynomial_new_term(1, "x", True)}
