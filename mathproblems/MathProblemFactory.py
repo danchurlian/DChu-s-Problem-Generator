@@ -30,7 +30,10 @@ class MathProblemFactory(object):
                     raise ValueError()
                 problem = ArithmeticProblem(num_probs) 
             except Exception:
-                output = "Argument must be a single integer between 1 and 8!"
+                output = """
+                <div>Argument must be a single integer between 1 and 8!</div>
+                <div>Example: 'arith 8'</div>
+                """
 
         elif (command in ["matmul"]):
             problem = MatrixMultiply()
@@ -41,8 +44,9 @@ class MathProblemFactory(object):
                 if (dimension < 2 or dimension > 5):
                     raise ValueError()
                 problem = MatrixLinearSystem(dimension)
-            except Exception as e:
-                output = "Argument must be an integer between 2 and 5!"
+            except Exception:
+                output = """<div>Argument must be an integer between 2 and 5!</div>
+                <div>Example: 'matsys 3'</div>"""
         
         elif (command in ["psys"]):
             problem = LinearPlanarSystem()
@@ -53,12 +57,9 @@ class MathProblemFactory(object):
                 if (num_roots < 2 or num_roots > 5):
                     raise ValueError()
                 problem = RootExpansion(num_roots)
-            except TypeError as te:
-                output = "Must include a single argument that is an integer!"
-            except IndexError as ie:
-                output = "Only one argument is needed!"
-            except ValueError as ve:
-                output = "Argument must be an integer between 2 and 5!"
+            except Exception:
+                output = """<div>Must have an integer argument between 2 and 5!</div>
+                <div>Example: 'expand 2'</div>"""
         elif (command in ["derive"]):
             try:
                 degree: int = int(args[0])
@@ -66,7 +67,8 @@ class MathProblemFactory(object):
                     raise ValueError()
                 problem = DerivativePolynomial(degree)
             except Exception:
-                output = "There must be exactly one argument that is an integer between 1 and 5!"
+                output = """<div>There must be exactly one argument that is an integer between 1 and 5!</div>
+                <div>Example: 'derive 2'</div>"""
         
         elif (command in ["int"]):
             if len(args) > 0:
@@ -78,7 +80,8 @@ class MathProblemFactory(object):
                             raise ValueError()
                         problem = IntegralPolynomial(degree)
                     except Exception:
-                        output = "Integral Polynomial syntax error: There must be exactly one argument that is an integer between 1 and 5!"
+                        output = """<div>There must be exactly one argument that is an integer between 1 and 5!</div>
+                        <div>Example: 'int poly 1'</div>"""
                 elif (integralType in ["arctan", "invtan"]):
                     problem = IntegralArctan()
                 elif (integralType in ["arcsin", "invsin"]):
@@ -91,8 +94,13 @@ class MathProblemFactory(object):
                     problem = IntegralTrigSub()
                 elif (integralType == "ibp1"):
                     problem = IntegralByParts1()
+                else:
+                    output = """<div>Invalid type of integral problem! Try one of the following and refer to the table:</div>
+                    <div>'int sincos'</div>
+                    <div>'int invsin'</div>"""
             else:
-                output = "You must specify the type of integral to generate!  Ex: 'int sincos'"
+                output = """<div>You must specify the type of integral to generate!</div>
+                <div>Example: 'int sincos'</div>"""
         elif (command == "pfrac"):
             problem = PartialFraction()
         elif (command == "pseries"):
@@ -110,8 +118,9 @@ class MathProblemFactory(object):
                     problem = DiffEqAutonomous(num_stationary_points)
                 else:
                     raise ValueError()
-            except Exception as e:
-                output = "Argument must be a number between 1 and 4 inclusive!"
+            except Exception:
+                output = """<div>Argument must be a number between 1 and 4 inclusive!</div>
+                <div>Example: 'odeauto 1'</div>"""
                 
         elif (command in ["ode2"]):
             problem = DiffEqSecondOrder()
