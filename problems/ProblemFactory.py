@@ -1,9 +1,6 @@
 from .Problem import Problem
 from .BSTProblem import BSTProblem
-from .MatrixLinearSystemProblem import MatrixLinearSystemProblem
-from .LinearPlanarSystemProblem import LinearPlanarSystemProblem
 from .HeapProblem import HeapProblem
-from .ArithmeticProblem import ArithmeticProblem
 from .ArraySortingProblem import ArraySortingProblem
 from .NumberConversionProblem import NumberConversionProblem
 from .ArrayGenerator import ArrayGenerator
@@ -60,12 +57,13 @@ class ProblemFactory(object):
                     if (0 <= num_elts and num_elts <= 20):
                         return ArraySortingProblem(num_elts)
                     else:
-                        errormsg += "Argument must be between 0 and 20 inclusive"
+                        errormsg += "Argument must be between 0 and 20! "
                 except ValueError:
-                    errormsg += "Argument must be an integer greater than 0"
+                    errormsg += "Argument was not an integer! "
                     pass
             else:
-                errormsg += "Missing integer argument between 0 and 20 inclusive"
+                errormsg += "Must have exactly one integer argument! "
+            errormsg += "Type the command as shown below:\nsort 20"
                 
         elif (problem_type in ["heap", "minheap"]):
             return HeapProblem()
@@ -77,14 +75,17 @@ class ProblemFactory(object):
                 return NumberConversionProblem(args[0])
 
         elif (problem_type in ["arrgen"]):
-            if (args != None and len(args) == 3 or len(args) == 4):
+            errormsg = "ArrayGenerationError: "
+            if (args != None and (len(args) == 3 or len(args) == 4)):
                 try:
                     num_elts: int = int(args[0])
                     low: int = int(args[1])
                     high: int = int(args[2])
                     allow_dupliates: bool = len(args) == 3 or args[3] != "false"
                     return ArrayGenerator(num_elts, low, high, allow_dupliates)
-                except Exception as e:
-                    errormsg = "Something went wrong" 
+                except Exception:
+                    pass
+            errormsg += """You must have 3 to 4 arguments!
+Example: arrgen 20 0 10 false"""
         
         return Problem(errormsg)
