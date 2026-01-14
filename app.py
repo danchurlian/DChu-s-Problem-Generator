@@ -56,6 +56,7 @@ def math_help_section() -> str:
 |`int sectan` | Generate an integral that involves secant and tangent multiplied together. | 
 |`int trigsub`| Integral trig substitution problem. | 
 |`int ibp1` | First type of integration by parts problem, such as (e^x)sin(x). |
+|`laplace n` | Apply the laplace transform to a given expression. There will be *n* terms generated. 1 <= n <= 5 |
 |`pfrac` | Generate a partial fractions problem. |
 |`pseries` | Generate a p-series convergence test. |
 |`dct` | Generate an infinite series that one can use either Direct Comparison or Limit Comparison tests. |
