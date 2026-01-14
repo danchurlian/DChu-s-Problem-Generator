@@ -6,6 +6,7 @@ from .IntegralSincos import IntegralSincos
 from .IntegralSectan import IntegralSectan
 from .IntegralTrigSub import IntegralTrigSub
 from .IntegralByParts1 import IntegralByParts1
+from .Laplace import Laplace
 from .PartialFraction import PartialFraction
 from .PSeries import PSeries
 from .SeriesDirectComparison import SeriesDirectComparison
@@ -101,6 +102,15 @@ class MathProblemFactory(object):
             else:
                 output = """<div>You must specify the type of integral to generate!</div>
                 <div>Example: 'int sincos'</div>"""
+        elif (command == "laplace"):
+            try:
+                num_terms: int = int(args[0])
+                if (num_terms > 5):
+                    raise ValueError()
+                problem = Laplace(num_terms)
+            except Exception:
+                output = """<div>You must specify one argument that is an integer and not more than 5!</div>
+                <div>Example: laplace 3</div>"""
         elif (command == "pfrac"):
             problem = PartialFraction()
         elif (command == "pseries"):
