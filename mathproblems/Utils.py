@@ -15,11 +15,11 @@ class Utils(object):
             elif not start:
                 result += f"<mo>+</mo>"
         else:
-            if (coef < 0):
-                result = f"<mo>-</mo><mn>{-coef}</mn>"
+            if start:
+                result += f"<mn>{coef}</mn>" 
             else:
-                if start:
-                    result += f"<mn>{coef}</mn>" 
+                if (coef < 0):
+                    result += f"<mo>-</mo><mn>{-coef}</mn>"
                 else:
                     result += f"<mo>+</mo><mn>{coef}</mn>"
 
