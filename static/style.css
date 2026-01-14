@@ -5,7 +5,10 @@
 
 body {
     background-color: rgb(243, 248, 252);   
+    min-height: 100vh;
     margin: 0px;
+    display: flex;
+    flex-direction: column;
 }
 
 body > * {
@@ -34,6 +37,10 @@ header nav a {
     display: inline-block;
 }
 
+main {
+    flex-grow: 1;
+}
+
 footer {
     background-color: rgb(5, 10, 65);
     height: 2em;
@@ -41,6 +48,9 @@ footer {
     color: white;
     font-family: Montsserat, sans-serif;
     margin: 0px;
+
+    /* position: absolute;
+    bottom: 0; */
 
     /* position: fixed; */
 }
@@ -70,7 +80,7 @@ nav a {
     padding-bottom: 5px;
     border-radius: 5px;
     
-    margin: 0.5em;
+    margin: 0.5em 0px;
 }
 
 .help-section table {
@@ -123,7 +133,7 @@ nav a {
     padding-bottom: 10px;
 
     border-radius: 5px;
-    margin: 0.5em;
+    margin: 0.5em 0px;
 }
 
 #output-section pre {

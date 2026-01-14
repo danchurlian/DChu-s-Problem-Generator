@@ -23,22 +23,23 @@
     <body>
         {% import 'utils.html' as utils %}
         {{ utils.header() }}
-        <h1> DChu's Problem Generator </h1>
-        <form name="form" method="post" id="command-form">
-            <input type="text" name="command_line" class="courier-text"  placeholder="Enter a command..." required="true" autofocus="true" autocomplete="off" />
-            <button type="submit" class="courier-text">Submit</button>
-        </form>
-        <h2>Commands:</h2>
-        <section class="help-section" id="home-help-section">
-            {{ help_section_markdown|safe }}
-        </section>
-        <h2>Output:</h2>
-        <section id="output-section" class="courier-text">
-            {% for line in output_lines %}
-                <pre> {{ line }} </pre>
-            {% endfor %}
-        </section>
-
+        <main>
+            <h1> DChu's Problem Generator </h1>
+            <form name="form" method="post" id="command-form">
+                <input type="text" name="command_line" class="courier-text"  placeholder="Enter a command..." required="true" autofocus="true" autocomplete="off" />
+                <button type="submit" class="courier-text">Submit</button>
+            </form>
+            <h2>Commands:</h2>
+            <section class="help-section" id="home-help-section">
+                {{ help_section_markdown|safe }}
+            </section>
+            <h2>Output:</h2>
+            <section id="output-section" class="courier-text">
+                {% for line in output_lines %}
+                    <pre> {{ line }} </pre>
+                {% endfor %}
+            </section>
+        </main>
         {{ utils.footer() }}
     </body>
 </html>
