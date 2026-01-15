@@ -2,7 +2,7 @@
 This is a Flask web application where the user can input a command and be given basic computer science / math problems to solve on paper. I built this as a personal project originally to help me practice and study course material over the fall semester.  
 There is a help section that lists the syntax for the commands and arguments. 
 
-## Current list of problems
+## Sample list of problems
 | Problem Name | Description |
 | :------------| :-----------|
 | Binary Search Tree Problem | Generates an array of unique random numbers, and asks the user to draw a Binary Search Tree when each of the numbers are inserted in order. |
@@ -31,6 +31,8 @@ Then came the `ArithmeticProblem`, `ArraySortingProblem` and `LinearPlanarSystem
 The latest changes I've made was creating a new apge for math-specific problems. This was used as a way for me to learn how math is embedded in HTML. I used MathML to display problems such as the Root Expansion, Derivative, and Integral problems. Then I moved a few problems from the old page to this new page. Learning MathML helped me understand the similarities between HTML and MathML as markup languages.
 
 The Differential Equation problem was very unique, because it introduced me to a number of different problems I didn't think before. I had to make sure that when the equation was displayed, it would be in a pleasing, proper math order. In order words, terms such as 1y or 0y would be just y and nothing respectively. This took a while to figure out and for later math problems down the line, I reckon it would need some abstraction.  
+
+Currently I am adding new problems as they come into my mind. Most of the application is complete and now would be just occasional updates. The most recent new problems are the integral problems, infinite series problems, and the laplace transform problem.
 
 For styling, I took great interest in learning how to use raw `css`, especially through learning about style selectors and which styling rules take priortiy. I also learned more about margins vs. padding, as well as learning about block vs. inline layouts.
 
