@@ -48,11 +48,6 @@ footer {
     color: white;
     font-family: Montsserat, sans-serif;
     margin: 0px;
-
-    /* position: absolute;
-    bottom: 0; */
-
-    /* position: fixed; */
 }
 footer div {
     padding: 0.5em;
@@ -128,11 +123,12 @@ nav a {
 #output-section {
     background-color: rgb(30, 28, 40);
     width: 60%;
+    min-height: 10rem;
 
     padding-top: 10px;
     padding-bottom: 10px;
 
-    border-radius: 5px;
+    border-radius: 7px;
     margin: 0.5em 0px;
 }
 
@@ -151,7 +147,8 @@ nav a {
 
 #math-display section {
     background-color: white;
-    border-radius: 3px;
+    min-height: 20rem;
+    border-radius: 1rem;
 
     font-family: serif;
     font-size: 1.5rem;
