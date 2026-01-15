@@ -79,13 +79,16 @@ class ProblemFactory(object):
             if (args != None and (len(args) == 3 or len(args) == 4)):
                 try:
                     num_elts: int = int(args[0])
+                    if (num_elts <= 0 or num_elts > 30):
+                        raise ValueError()
+
                     low: int = int(args[1])
                     high: int = int(args[2])
                     allow_dupliates: bool = len(args) == 3 or args[3] != "false"
                     return ArrayGenerator(num_elts, low, high, allow_dupliates)
                 except Exception:
                     pass
-            errormsg += """You must have 3 to 4 arguments!
+            errormsg += """You must have 3 to 4 arguments! Cannot generate more than 30 elements!
 Example: arrgen 20 0 10 false"""
         
         return Problem(errormsg)
