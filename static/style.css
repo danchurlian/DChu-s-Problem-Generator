@@ -1,3 +1,8 @@
+:root{ 
+    --nav-hover-color: rgb(16, 21, 114);
+    --hover-transition: background-color 0.1s;
+}
+
 .courier-text {
     font-family: 'Courier New', Courier, monospace;
     font-size: 1em;
@@ -26,15 +31,22 @@ header {
 header nav {
     background-color: rgb(5, 10, 65);
     height: 2em;
-
     margin: 0px;
 }
 
 header nav a {
+    color: white;
+    transition: var(--hover-transition);
+
     font-family: Montsserat, sans-serif;
-    padding: 0.5em;
-    padding-top: 0.5em;
+    min-height: calc(100% - 0.25rem);
+    padding: 0 0.5rem;
+    padding-top: 0.25rem;
     display: inline-block;
+}
+
+header nav a:hover {
+    background-color: var(--nav-hover-color);
 }
 
 main {
@@ -60,10 +72,6 @@ h1, h2 {
 
 body > h2 {
     margin-bottom: 0.25em;
-}
-
-nav a {
-    color: white;
 }
 
 .help-section {
@@ -107,9 +115,14 @@ nav a {
 
 #command-form button {
     background-color: rgb(9, 17, 103);
+    transition: var(--hover-transition);
     color: white;
     border-width: 0px;
     border-radius: 5px;
+}
+
+#command-form button:hover {
+    background-color: rgb(42, 15, 142);
 }
 
 #command-form input {
