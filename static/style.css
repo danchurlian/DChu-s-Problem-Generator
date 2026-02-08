@@ -67,13 +67,9 @@ nav a {
 }
 
 .help-section {
-    background-color: rgb(243, 242, 248);
+    background-color: rgb(251, 255, 255);
     width: 50%;
     font-family: Lato, sans-serif;
-    
-    padding-top: 5px;
-    padding-bottom: 5px;
-    border-radius: 5px;
     
     margin: 0.5em 0px;
 }
@@ -81,15 +77,19 @@ nav a {
 .help-section table {
     table-layout: fixed;
     border-collapse: collapse;
+    border-radius: 5px;
+}
+
+.help-section table tbody tr:nth-child(odd) {
+    background-color: rgb(238, 242, 246);
 }
 
 .help-section table th, td {
-    border: 3px solid rgb(78, 67, 90);
     padding: 5px;
 }
 
 .help-section code {
-    background-color: rgb(104, 98, 82);
+    background-color: rgb(89, 92, 96);
     color: white;
     padding-left: .25em;
     padding-right: .25em;
