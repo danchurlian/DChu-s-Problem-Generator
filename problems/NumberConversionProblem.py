@@ -56,12 +56,12 @@ class NumberConversionProblem(Problem):
 
     
     def _get_problem_str(self):
-        if (self.option == "b"):
+        if (self.option in ["b", "bin", "binary"]):
             return self.binary_prob()
-        elif (self.option == "d"):
+        elif (self.option in ["d", "decimal"]):
             return self.decimal_prob()
-        elif (self.option == "o"):
+        elif (self.option in ["o", "oct", "octal"]):
             return self.octal_prob()
-        elif (self.option == "h"):
+        elif (self.option in ["h", "hex", "hexadecimal"]):
             return self.hex_prob()
-        return f"Invalid argument for NumberConversionProblem command. Write the command as either the following:\nconv d\nconv b\nconv h"
+        return f"Invalid argument for NumberConversionProblem command. Write the command as either the following:\nconv d\nconv b\nconv o\nconv h"

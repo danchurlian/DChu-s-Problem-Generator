@@ -35,7 +35,7 @@ def help_section():
 |`bst`, `bstdraw`, `bstproblem` | Draw a **Binary Search Tree**. |  
 |`heap` | Compute operations on a min-heap and draw out the result. |  
 |`sort n`, `sorting n` | Generate n number of arithmetic problems. 0 <= n <= 20 |  
-|`conv [b | d | h]` | Generate five random numbers between 0-255 in either binary, decimal, or hexadecimal and write them down in other number systems. | 
+|`conv [b | d | o | h]` | Generate five random numbers between 0-255 in either binary, octal, decimal, or hexadecimal and write them down in other number systems. | 
 |`arrgen [num_elts] [low] [high] [allow_duplicates: true | false]` | Generate an array of a given length with numbers ranging form the specified input. Allow duplicates option is optional but default to true. Number of elements must be between 1 and 30 inclusive.| 
 """
     
