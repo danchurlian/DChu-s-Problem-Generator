@@ -36,6 +36,7 @@ def help_section():
 |`heap` | Compute operations on a min-heap and draw out the result. |  
 |`sort n`, `sorting n` | Generate n number of arithmetic problems. 0 <= n <= 20 |  
 |`conv [b | d | o | h]` | Generate five random numbers between 0-255 in either binary, octal, decimal, or hexadecimal and write them down in other number systems. | 
+|`twocomp` | Generate a random negative number and write it in 8-bit two's complement. |
 |`arrgen [num_elts] [low] [high] [allow_duplicates: true | false]` | Generate an array of a given length with numbers ranging form the specified input. Allow duplicates option is optional but default to true. Number of elements must be between 1 and 30 inclusive.| 
 """
     

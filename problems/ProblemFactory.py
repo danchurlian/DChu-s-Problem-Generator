@@ -3,6 +3,7 @@ from .BSTProblem import BSTProblem
 from .HeapProblem import HeapProblem
 from .ArraySortingProblem import ArraySortingProblem
 from .NumberConversionProblem import NumberConversionProblem
+from .TwoComplement import TwoComplement
 from .ArrayGenerator import ArrayGenerator
 
 class ProblemFactory(object):
@@ -73,6 +74,9 @@ class ProblemFactory(object):
                 return NumberConversionProblem(None)
             else:
                 return NumberConversionProblem(args[0])
+
+        elif (problem_type in ["twocomp"]):
+            return TwoComplement()
 
         elif (problem_type in ["arrgen"]):
             errormsg = "ArrayGenerationError: "
