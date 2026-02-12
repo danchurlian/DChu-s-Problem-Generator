@@ -76,7 +76,10 @@ class ProblemFactory(object):
                 return NumberConversionProblem(args[0])
 
         elif (problem_type in ["twocomp"]):
-            return TwoComplement()
+            problem_type: str = "d"
+            if (args is not None and len(args) == 1 and args[0] == "b"):
+                problem_type: str = "b"
+            return TwoComplement(problem_type)
 
         elif (problem_type in ["arrgen"]):
             errormsg = "ArrayGenerationError: "
