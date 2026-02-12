@@ -1,18 +1,7 @@
 from .Problem import Problem
+from .NumberConversionHandler import NumberConversionHandler
 import random
 
-# Precondition: num must be between 0-255.
-# 101 --> "01100101"
-def _to_binary_string(num: int):
-    result: str = ""
-    for i in range(8):
-        exponent: int = 7-i
-        divisor = 2 ** exponent
-        digit = int(num / (divisor))
-        num %= divisor
-        result += f"{digit}"
-
-    return result
 
 class NumberConversionProblem(Problem):
     # Options can be b2d, d2b
@@ -31,7 +20,7 @@ class NumberConversionProblem(Problem):
         nums = []
         for i in range(5):
             random_num: int = int(random.random() * 256)
-            nums.append(_to_binary_string(random_num))
+            nums.append(NumberConversionHandler.decimal_to_binary(random_num))
         result: str = f"The list of binary numbers are: {nums}.\nWrite those numbers in hexadecimal.\nWrite those numbers in octal.\nWrite those numbers in decimal."
         return result
     
