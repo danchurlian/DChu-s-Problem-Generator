@@ -4,6 +4,7 @@ from .HeapProblem import HeapProblem
 from .ArraySortingProblem import ArraySortingProblem
 from .NumberConversionProblem import NumberConversionProblem
 from .TwoComplement import TwoComplement
+from .BitwiseProblem import BitwiseProblem
 from .ArrayGenerator import ArrayGenerator
 
 class ProblemFactory(object):
@@ -80,6 +81,9 @@ class ProblemFactory(object):
             if (args is not None and len(args) == 1 and args[0] == "b"):
                 problem_type: str = "b"
             return TwoComplement(problem_type)
+        
+        elif (problem_type in ["bitwise", "bit"]):
+            return BitwiseProblem()
 
         elif (problem_type in ["arrgen"]):
             errormsg = "ArrayGenerationError: "

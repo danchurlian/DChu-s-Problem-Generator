@@ -14,6 +14,7 @@ def parse_command(input: str):
         prob = ProblemFactory.createProblem(words[0], args)
     else:
         prob = ProblemFactory.createProblem(input)
+    print(prob, prob.problem_str)
     raw_str = prob.problem_str.rstrip()
     lines = raw_str.split("\n")
     return lines
@@ -37,6 +38,7 @@ def help_section():
 |`sort n`, `sorting n` | Generate n number of arithmetic problems. 0 <= n <= 20 |  
 |`conv [b | d | o | h]` | Generate five random numbers between 0-255 in either binary, octal, decimal, or hexadecimal and write them down in other number systems. | 
 |`twocomp [b | d]` | Generate a random negative number and write it in 8-bit two's complement. If argument is 'd', you'll be given a base 10 number. If argument is 'b', you'll be given a binary number. |
+|`bit`, `bitwise` | Generate two binary numbers and perform bitwise operations on them. |
 |`arrgen [num_elts] [low] [high] [allow_duplicates: true | false]` | Generate an array of a given length with numbers ranging form the specified input. Allow duplicates option is optional but default to true. Number of elements must be between 1 and 30 inclusive.| 
 """
     
