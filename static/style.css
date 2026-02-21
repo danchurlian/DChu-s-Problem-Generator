@@ -146,6 +146,11 @@ body > h2 {
 }
 
 #output-section pre {
+    padding: 0 0.65rem;
+    white-space: pre-line;
+}
+
+#output-section pre {
     margin-top: 5px;
     margin-bottom: 5px;
     color: white;
