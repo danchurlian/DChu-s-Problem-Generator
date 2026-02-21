@@ -5,6 +5,7 @@ from .ArraySortingProblem import ArraySortingProblem
 from .NumberConversionProblem import NumberConversionProblem
 from .TwoComplement import TwoComplement
 from .BitwiseProblem import BitwiseProblem
+from .AsciiConversionProblem import AsciiConversionProblem
 from .ArrayGenerator import ArrayGenerator
 
 class ProblemFactory(object):
@@ -84,6 +85,12 @@ class ProblemFactory(object):
         
         elif (problem_type in ["bitwise", "bit"]):
             return BitwiseProblem()
+        
+        elif (problem_type in ["ascii"]):
+            problem_type: str = "decode" 
+            if (args is not None and len(args) == 1 and args[0] == "encode"):
+                problem_type = "encode"
+            return AsciiConversionProblem(problem_type)
 
         elif (problem_type in ["arrgen"]):
             errormsg = "ArrayGenerationError: "
