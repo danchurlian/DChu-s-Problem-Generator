@@ -5,6 +5,7 @@ from .ArraySortingProblem import ArraySortingProblem
 from .NumberConversionProblem import NumberConversionProblem
 from .TwoComplement import TwoComplement
 from .BitwiseProblem import BitwiseProblem
+from .HexaBitwise import HexaBitwise
 from .AsciiConversionProblem import AsciiConversionProblem
 from .ArrayGenerator import ArrayGenerator
 
@@ -83,8 +84,24 @@ class ProblemFactory(object):
                 problem_type: str = "b"
             return TwoComplement(problem_type)
         
+
         elif (problem_type in ["bitwise", "bit"]):
             return BitwiseProblem()
+        
+
+        elif (problem_type in ["hexabitwise", "hbit"]):
+            num_problems: int = 10
+            if (args is not None and len(args) == 1):
+                try:
+                    arg_number: int = int(args[0])
+                    if (arg_number < 1 or arg_number > 10):
+                        raise ValueError()
+                    else:
+                        num_problems = arg_number
+                except:
+                    pass
+            return HexaBitwise(num_problems)
+            
         
         elif (problem_type in ["ascii"]):
             problem_type: str = "decode" 
