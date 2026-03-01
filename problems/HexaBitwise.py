@@ -8,7 +8,8 @@ ARG_TO_OPERATOR_SYMBOL: dict = {
 
 # Return a random single hexadecimal digit
 def random_hex():
-    return hex(random.randint(0, 15)) 
+    result: str = hex(random.randint(0, 15)) 
+    return result[2:]
 
 # Return a random operator
 def random_operator():
