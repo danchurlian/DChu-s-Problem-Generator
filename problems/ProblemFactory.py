@@ -91,7 +91,9 @@ class ProblemFactory(object):
 
         elif (problem_type in ["hexabitwise", "hbit"]):
             num_problems: int = 10
-            if (args is not None and len(args) == 1):
+            operator: str = None
+            if (args is not None and len(args) >= 1):
+                # Get the user argument for number of problems
                 try:
                     arg_number: int = int(args[0])
                     if (arg_number < 1 or arg_number > 10):
@@ -100,7 +102,18 @@ class ProblemFactory(object):
                         num_problems = arg_number
                 except:
                     pass
-            return HexaBitwise(num_problems)
+                
+                # Get the type of operator argument
+                try:
+                    operator_arg: str = args[1]
+                    if (operator_arg not in ["and", "or"]):
+                        raise ValueError()
+                    else:
+                        operator = operator_arg
+                except:
+                    pass
+
+            return HexaBitwise(num_problems, operator)
             
         
         elif (problem_type in ["ascii"]):
