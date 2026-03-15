@@ -40,6 +40,7 @@ def help_section():
 |`bit`, `bitwise` | Generate two binary numbers and perform bitwise operations on them. |
 |`hexabitwise [n] [and | or]`, `hbit [n] [and | or]` | Generate n numbers of problems where you calculate bitwise operations of hexadecimal numbers. 0 <= n <= 10 | 
 |`ascii [encode | decode]` | Convert a random English word into binary using the ASCII standard. | 
+|`index` | Generate an array of a fixed size and determine the values of random indices. | 
 |`arrgen [num_elts] [low] [high] [allow_duplicates: true | false]` | Generate an array of a given length with numbers ranging form the specified input. Allow duplicates option is optional but default to true. Number of elements must be between 1 and 30 inclusive.| 
 """
     
