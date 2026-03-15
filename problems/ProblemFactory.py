@@ -1,13 +1,14 @@
 from .Problem import Problem
 from .BSTProblem import BSTProblem
 from .HeapProblem import HeapProblem
-from .ArraySortingProblem import ArraySortingProblem
 from .NumberConversionProblem import NumberConversionProblem
 from .TwoComplement import TwoComplement
 from .BitwiseProblem import BitwiseProblem
 from .HexaBitwise import HexaBitwise
 from .AsciiConversionProblem import AsciiConversionProblem
 from .ArrayGenerator import ArrayGenerator
+from .ArraySortingProblem import ArraySortingProblem
+from .ArrayIndexProblem import ArrayIndexProblem
 
 class ProblemFactory(object):
     def __init__(self):
@@ -116,6 +117,10 @@ class ProblemFactory(object):
             return HexaBitwise(num_problems, operator)
             
         
+        elif (problem_type in ["index"]):
+            return ArrayIndexProblem()
+            
+
         elif (problem_type in ["ascii"]):
             problem_type: str = "decode" 
             if (args is not None and len(args) == 1 and args[0] == "encode"):

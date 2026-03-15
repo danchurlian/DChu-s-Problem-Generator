@@ -34,12 +34,13 @@ def help_section():
 |:--|:--|  
 |`bst`, `bstdraw`, `bstproblem` | Draw a **Binary Search Tree**. |  
 |`heap` | Compute operations on a min-heap and draw out the result. |  
-|`sort n`, `sorting n` | Generate n number of arithmetic problems. 0 <= n <= 20 |  
+|`sort n`, `sorting n` | Generate an array of size n and sort it manually by hand. 0 <= n <= 20 |  
 |`conv [b | d | o | h]` | Generate five random numbers between 0-255 in either binary, octal, decimal, or hexadecimal and write them down in other number systems. | 
 |`twocomp [b | d]` | Generate a random negative number and write it in 8-bit two's complement. If argument is 'd', you'll be given a base 10 number. If argument is 'b', you'll be given a binary number. |
 |`bit`, `bitwise` | Generate two binary numbers and perform bitwise operations on them. |
 |`hexabitwise [n] [and | or]`, `hbit [n] [and | or]` | Generate n numbers of problems where you calculate bitwise operations of hexadecimal numbers. 0 <= n <= 10 | 
 |`ascii [encode | decode]` | Convert a random English word into binary using the ASCII standard. | 
+|`index` | Generate an array of a fixed size and determine the values of random indices. | 
 |`arrgen [num_elts] [low] [high] [allow_duplicates: true | false]` | Generate an array of a given length with numbers ranging form the specified input. Allow duplicates option is optional but default to true. Number of elements must be between 1 and 30 inclusive.| 
 """
     
