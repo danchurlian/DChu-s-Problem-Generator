@@ -7,7 +7,7 @@ REQUEST_URL: str = "https://random-word-api.herokuapp.com/word"
 # Call the random word API and return the response
 def get_random_word() -> str:
     word: str = ""
-    response = requests.get(REQUEST_URL)
+    response = requests.get(REQUEST_URL, timeout=10)
     response.raise_for_status()
 
     # Response content is a list with a single element ["random"]
@@ -41,7 +41,8 @@ class AsciiConversionProblem(Problem):
             word = get_random_word()
             binary_word = get_binary_str(word)
         except Exception as e:
-            return f"Failed to get a random word. Error: {e}"
+            print(f"Error getting a word. Reason: {e}")
+            return f"Failed to get a random word. Sorry!"
         
         # Display the problem depending on the type of problem
         if (self.prob_type == "decode"):
