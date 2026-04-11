@@ -121,11 +121,19 @@ class ProblemFactory(object):
             return ArrayIndexProblem()
             
 
+        # ASCII Problem
         elif (problem_type in ["ascii"]):
-            problem_type: str = "decode" 
-            if (args is not None and len(args) == 1 and args[0] == "encode"):
-                problem_type = "encode"
-            return AsciiConversionProblem(problem_type)
+            problem_type: str = "decode"
+            word_type: str = "english"
+            if (args is not None):
+                arg_set: set = set(args)
+                if ("encode" in arg_set and not "decode" in arg_set):
+                    problem_type = "encode"
+                if ("random" in arg_set and not "english" in arg_set):
+                    word_type = "random"
+
+            return AsciiConversionProblem(problem_type, word_type)
+
 
         elif (problem_type in ["arrgen"]):
             errormsg = "ArrayGenerationError: "
