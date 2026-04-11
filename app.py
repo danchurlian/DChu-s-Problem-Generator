@@ -39,7 +39,7 @@ def help_section():
 |`twocomp [b | d]` | Generate a random negative number and write it in 8-bit two's complement. If argument is 'd', you'll be given a base 10 number. If argument is 'b', you'll be given a binary number. |
 |`bit`, `bitwise` | Generate two binary numbers and perform bitwise operations on them. |
 |`hexabitwise [n] [and | or]`, `hbit [n] [and | or]` | Generate n numbers of problems where you calculate bitwise operations of hexadecimal numbers. 0 <= n <= 10 | 
-|`ascii [encode | decode]` | Convert a random English word into binary using the ASCII standard. | 
+|`ascii [encode | decode] [english | random]` | Convert either an English word  or a truly random word into binary using the ASCII standard, or decode such a word from binary to readable characters. | 
 |`index` | Generate an array of a fixed size and determine the values of random indices. | 
 |`arrgen [num_elts] [low] [high] [allow_duplicates: true | false]` | Generate an array of a given length with numbers ranging form the specified input. Allow duplicates option is optional but default to true. Number of elements must be between 1 and 30 inclusive.| 
 """
