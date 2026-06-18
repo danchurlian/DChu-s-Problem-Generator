@@ -38,13 +38,17 @@
                 </section>
             </aside>
 
-            <h2>
-                Commands:
-            </h2>
+
+            <dialog id='command-list-dialog'>
+                <button commandfor='command-list-dialog' command='close'>Close</button>
+                <h2>List of Commands</h2>
+                {{ math_help_section_markdown | safe }}
+            </dialog>
+
+            <button commandfor='command-list-dialog' command='show-modal'>Command list</button>
 
             <section class="help-section" id="math-help-section">
-                {{ math_help_section_markdown | safe }}
-        </section>
+            </section>
         </main>
 
         {{ utils.footer() }}
