@@ -23,21 +23,13 @@
     <body>
         {% import 'utils.html' as utils %}
         {{ utils.header() }}
-        <main>
+        <main id='math-main'>
             <h1>DChu's Math Problem Generator</h1>
 
             <form name="form" method="post" id="command-form">
                 <input type="text" name="command_line" class="courier-text"  placeholder="Enter a command..." required="true" autofocus="true" autocomplete="off" />
                 <button type="submit" class="courier-text">Submit</button>
             </form>
-            <aside id="math-display">
-                <h2>Output:</h2>
-                <section>
-                    {{ math_problem | safe }}            
-                    <div> </div>
-                </section>
-            </aside>
-
 
             <dialog id='command-list-dialog' class='help-section'>
                 <button commandfor='command-list-dialog' command='close'>Close</button>
@@ -46,6 +38,13 @@
             </dialog>
 
             <button commandfor='command-list-dialog' command='show-modal'>Command list</button>
+            <div id="math-display">
+                <h2>Output:</h2>
+                <section>
+                    {{ math_problem | safe }}            
+                    <div> </div>
+                </section>
+            </div>
 
             <section class="help-section" id="math-help-section">
             </section>
