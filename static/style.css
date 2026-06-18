@@ -133,6 +133,16 @@ body > h2 {
     height: 2em;
 }
 
+
+
+#command-list-dialog {
+    border: none;
+    margin: auto;
+}
+
+
+/* Output sections */
+
 #output-section {
     background-color: rgb(30, 28, 40);
     width: 60%;
@@ -176,7 +186,3 @@ body > h2 {
 #math-display section > * {
     padding: 0.5rem;
 }
-
-/* #math-display math {
-    margin-bottom: 0.5em;
-} */
