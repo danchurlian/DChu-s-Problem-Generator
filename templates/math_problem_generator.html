@@ -32,12 +32,18 @@
             </form>
 
             <dialog id='command-list-dialog' class='help-section'>
-                <button commandfor='command-list-dialog' command='close'>Close</button>
+                <button 
+                  id='math-dialog-close-button' 
+                  commandfor='command-list-dialog' 
+                  command='close'>Close</button>
                 <h2>List of Commands</h2>
                 {{ math_help_section_markdown | safe }}
             </dialog>
 
-            <button commandfor='command-list-dialog' command='show-modal'>Command list</button>
+            <button 
+              id='math-dialog-open-button' 
+              commandfor='command-list-dialog' 
+              command='show-modal'>Command list</button>
             <div id="math-display">
                 <h2>Output:</h2>
                 <section>

@@ -120,6 +120,13 @@ body > h2 {
     width: 40%;
 }
 
+button {
+    transition: var(--hover-transition);
+    color: white;
+    border-width: 0px;
+    border-radius: 5px;
+}
+
 #command-form button {
     background-color: rgb(9, 17, 103);
     transition: var(--hover-transition);
@@ -141,10 +148,27 @@ body > h2 {
 }
 
 
+/* Command dialog */
 
 #command-list-dialog {
     border: none;
     margin: auto;
+}
+
+
+#math-dialog-open-button {
+    background-color: #5c77ff;
+    font-family: Montserrat, sans-serif;
+    font-size: 1.5rem;
+
+    height: 3rem;
+    margin: 1rem;
+}
+
+
+#math-dialog-open-button:hover {
+    background-color: rgb(9, 17, 103);
+    transition: var(--hover-transition);
 }
 
 
