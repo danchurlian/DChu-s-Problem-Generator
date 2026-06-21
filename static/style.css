@@ -117,9 +117,6 @@ body > h2 {
     margin-bottom: 0.5em;
 }
 
-#math-help-section {
-    width: 40%;
-}
 
 button {
     transition: var(--hover-transition);
@@ -179,9 +176,17 @@ button {
 
 /* Output sections */
 
-#output-section {
+.display-section {
+    display: block;
+}
+
+
+#home-display {
+    width: 60vw;
+}
+
+#home-display-window {
     background-color: rgb(30, 28, 40);
-    width: 60%;
     min-height: 10rem;
 
     padding-top: 10px;
@@ -191,12 +196,12 @@ button {
     margin: 0.5em 0px;
 }
 
-#output-section pre {
+#home-display-window pre {
     padding: 0 0.65rem;
     white-space: pre-line;
 }
 
-#output-section pre {
+#home-display-window pre {
     margin-top: 5px;
     margin-bottom: 5px;
     color: white;
@@ -204,11 +209,10 @@ button {
 }
 
 #math-display {
-    display: block;
     width: 50vw;
 }
 
-#math-display section {
+#math-display-window {
     background-color: white;
     min-height: 20rem;
     border-radius: 1rem;
@@ -218,6 +222,6 @@ button {
     margin-right: 1em;
 }
 
-#math-display section > * {
+#math-display-window > * {
     padding: 0.5rem;
 }
