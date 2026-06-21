@@ -83,29 +83,31 @@ body > h2 {
     margin-bottom: 0.25em;
 }
 
-.help-section {
+.command-dialog {
+    border: none;
+    border-radius: 5px;
+    margin: auto;
+
     background-color: rgb(251, 255, 255);
     width: 50%;
     font-family: Lato, sans-serif;
-    
-    margin: 0.5em 0px;
 }
 
-.help-section table {
+.command-dialog table {
     table-layout: fixed;
     border-collapse: collapse;
     border-radius: 5px;
 }
 
-.help-section table tbody tr:nth-child(odd) {
+.command-dialog table tbody tr:nth-child(odd) {
     background-color: rgb(238, 242, 246);
 }
 
-.help-section table th, td {
+.command-dialog table th, td {
     padding: 5px;
 }
 
-.help-section code {
+.command-dialog code {
     background-color: rgb(89, 92, 96);
     color: white;
     padding-left: .25em;
@@ -114,7 +116,7 @@ body > h2 {
     border-radius: 2px;
 }
 
-.help-section li {
+.command-dialog li {
     margin-bottom: 0.5em;
 }
 
@@ -160,7 +162,7 @@ button {
 
 
 
-#math-dialog-open-button {
+.dialog-open-button {
     background-color: #5c77ff;
     font-family: Montserrat, sans-serif;
     font-size: 1.5rem;
@@ -168,18 +170,18 @@ button {
     height: 3rem;
     margin: 1rem;
 }
-#math-dialog-open-button:hover {
+.dialog-open-button:hover {
     background-color: rgb(9, 17, 103);
 }
 
 
 
-#math-dialog-close-button {
+.dialog-close-button {
     background-color: var(--button-dark-blue);
     width: 4.2rem;
     font-size: 1.25rem;
 }
-#math-dialog-close-button:hover {
+.dialog-close-button:hover {
     background-color: var(--submit-button-hover);
 }
 
@@ -212,7 +214,6 @@ button {
 }
 
 #math-display {
-    float: right;
     display: block;
     width: 50vw;
 }
