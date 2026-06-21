@@ -1,5 +1,7 @@
 :root{ 
     --nav-hover-color: rgb(16, 21, 114);
+    --button-dark-blue: rgb(9, 17, 103);
+    --submit-button-hover: #2f31b5;
     --hover-transition: background-color 0.1s;
 }
 
@@ -51,6 +53,13 @@ header nav a:hover {
 
 main {
     flex-grow: 1;
+}
+
+
+#math-main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 footer {
@@ -113,6 +122,13 @@ body > h2 {
     width: 40%;
 }
 
+button {
+    transition: var(--hover-transition);
+    color: white;
+    border-width: 0px;
+    border-radius: 5px;
+}
+
 #command-form button {
     background-color: rgb(9, 17, 103);
     transition: var(--hover-transition);
@@ -122,7 +138,7 @@ body > h2 {
 }
 
 #command-form button:hover {
-    background-color: rgb(42, 15, 142);
+    background-color: var(--submit-button-hover);
 }
 
 #command-form input {
@@ -132,6 +148,44 @@ body > h2 {
 #command-form * {
     height: 2em;
 }
+
+
+
+/* Command dialog */
+#command-list-dialog {
+    border: none;
+    border-radius: 5px;
+    margin: auto;
+}
+
+
+
+#math-dialog-open-button {
+    background-color: #5c77ff;
+    font-family: Montserrat, sans-serif;
+    font-size: 1.5rem;
+
+    height: 3rem;
+    margin: 1rem;
+}
+#math-dialog-open-button:hover {
+    background-color: rgb(9, 17, 103);
+}
+
+
+
+#math-dialog-close-button {
+    background-color: var(--button-dark-blue);
+    width: 4.2rem;
+    font-size: 1.25rem;
+}
+#math-dialog-close-button:hover {
+    background-color: var(--submit-button-hover);
+}
+
+
+
+/* Output sections */
 
 #output-section {
     background-color: rgb(30, 28, 40);
@@ -176,7 +230,3 @@ body > h2 {
 #math-display section > * {
     padding: 0.5rem;
 }
-
-/* #math-display math {
-    margin-bottom: 0.5em;
-} */
