@@ -176,6 +176,7 @@ button {
 
 #math-dialog-close-button {
     background-color: var(--button-dark-blue);
+    width: 4.2rem;
     font-size: 1.25rem;
 }
 #math-dialog-close-button:hover {
