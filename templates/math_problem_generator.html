@@ -2,6 +2,7 @@
 
 
 {% block content %}
+
   <div id='math-main'>
     <h1>DChu's Math Problem Generator</h1>
 
@@ -13,14 +14,18 @@
     <dialog id='command-list-dialog' class='help-section'>
       <button 
         id='math-dialog-close-button' 
+        class='dialog-close-button'
         commandfor='command-list-dialog' 
-        command='close'>Close</button>
+        command='close'>
+        Close
+      </button>
       <h2>List of Commands</h2>
       {{ math_help_section_markdown | safe }}
     </dialog>
 
     <button 
       id='math-dialog-open-button' 
+      class='dialog-open-button'
       commandfor='command-list-dialog' 
       command='show-modal'>Command list</button>
     <div id="math-display">

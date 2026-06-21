@@ -13,11 +13,25 @@
     <button type="submit" class="courier-text">Submit</button>
   </form>
 
-  <h2>Commands:</h2>
+  <dialog id='home-command-list-dialog' class='help-section'>
+    <button 
+      id='home-dialog-close-button' 
+      class='dialog-close-button'
+      commandfor='home-command-list-dialog' 
+      command='close'>
+      Close
+    </button>
 
-  <section class="help-section" id="home-help-section">
+    <h2>List of Commands</h2>
+
     {{ help_section_markdown|safe }}
-  </section>
+  </dialog>
+
+  <button 
+    id='home-dialog-open-button' 
+    class='dialog-open-button'
+    commandfor='home-command-list-dialog' 
+    command='show-modal'>Command list</button>
 
   <h2>Output:</h2>
 
