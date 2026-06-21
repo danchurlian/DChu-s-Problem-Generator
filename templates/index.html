@@ -1,45 +1,30 @@
-<!DOCTYPE html> 
-<html lang="en">
-    <head>
-        <meta charset="utf-8">
-        <meta name="application-name" content="DChu's Problem Generator">
-        <meta name="author" content="DChu">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>DChu's Problem Generator</title>
+{% extends "layout.html" %}
 
-        {% import 'utils.html' as utils %}
-        {{ utils.fonts() }}
 
-        <link href=" {{ url_for('static', filename='style.css') }}" rel="stylesheet "/>
+{% block content %}
 
-        <style>
-            @font-face {
-                font-family: Montserrat;
-                src: url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap");
-            }
-        </style>
+  <h1> DChu's Problem Generator </h1>
 
-    </head>
-    <body>
-        {% import 'utils.html' as utils %}
-        {{ utils.header() }}
-        <main>
-            <h1> DChu's Problem Generator </h1>
-            <form name="form" method="post" id="command-form">
-                <input type="text" name="command_line" class="courier-text"  placeholder="Enter a command..." required="true" autofocus="true" autocomplete="off" />
-                <button type="submit" class="courier-text">Submit</button>
-            </form>
-            <h2>Commands:</h2>
-            <section class="help-section" id="home-help-section">
-                {{ help_section_markdown|safe }}
-            </section>
-            <h2>Output:</h2>
-            <section id="output-section" class="courier-text">
-                {% for line in output_lines %}
-                    <pre> {{ line }} </pre>
-                {% endfor %}
-            </section>
-        </main>
-        {{ utils.footer() }}
-    </body>
-</html>
+  <form name="form" method="post" id="command-form">
+    <input 
+      type="text" name="command_line" 
+      class="courier-text"  placeholder="Enter a command..." 
+      required="true" autofocus="true" autocomplete="off" />
+    <button type="submit" class="courier-text">Submit</button>
+  </form>
+
+  <h2>Commands:</h2>
+
+  <section class="help-section" id="home-help-section">
+    {{ help_section_markdown|safe }}
+  </section>
+
+  <h2>Output:</h2>
+
+  <section id="output-section" class="courier-text">
+    {% for line in output_lines %}
+      <pre> {{ line }} </pre>
+    {% endfor %}
+  </section>
+
+{% endblock %}
