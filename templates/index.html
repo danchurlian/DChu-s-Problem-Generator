@@ -13,18 +13,37 @@
     <button type="submit" class="courier-text">Submit</button>
   </form>
 
-  <h2>Commands:</h2>
+  <dialog id='home-command-dialog' class='command-dialog'>
+    <button 
+      id='home-dialog-close-button' 
+      class='dialog-close-button'
+      commandfor='home-command-dialog' 
+      command='close'>
+      Close
+    </button>
 
-  <section class="help-section" id="home-help-section">
+    <h2>List of Commands</h2>
+
     {{ help_section_markdown|safe }}
-  </section>
+  </dialog>
 
-  <h2>Output:</h2>
+  <button 
+    id='home-dialog-open-button' 
+    class='dialog-open-button'
+    commandfor='home-command-dialog' 
+    command='show-modal'>
+    Command list
+  </button>
 
-  <section id="output-section" class="courier-text">
-    {% for line in output_lines %}
-      <pre> {{ line }} </pre>
-    {% endfor %}
-  </section>
+
+  <div class='display-section' id='home-display'>
+    <h2>Output:</h2>
+
+    <div id="home-display-window" class="courier-text">
+      {% for line in output_lines %}
+        <pre> {{ line }} </pre>
+      {% endfor %}
+    </div>
+  </div>
 
 {% endblock %}
