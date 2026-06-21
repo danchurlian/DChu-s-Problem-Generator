@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+
+<html lang='en'>
+  <head>
+    <meta charset="utf-8">
+    <meta name="application-name" content="DChu's Problem Generator">
+    <meta name="author" content="DChu">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DChu's Problem Generator</title>
+
+    <!-- fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap" rel="stylesheet">
+
+    <link href=" {{ url_for('static', filename='style.css') }}" rel="stylesheet "/>
+
+    <style>
+      @font-face {
+        font-family: Montserrat;
+        src: url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap");
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <nav>
+        <a href="/">Home</a>
+        <a href="/about">About</a>
+        <a href="/math_problem_generator">Math Problem Generator</a>
+      </nav>
+    </header>
+    {% block content %} 
+    {% endblock %}
+
+    <footer>
+      <div>
+        Copyright (c) 2025 by Daniel Chu. All rights reserved.
+      </div>
+    </footer>
+  </body>
+</html>
